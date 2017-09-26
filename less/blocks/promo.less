@@ -1,0 +1,76 @@
+.promo {
+  margin-bottom: 25px;
+
+  background-color: #fafafa;
+}
+.promo__wrapper {
+  position: relative;
+
+  padding-top: 90px;
+
+  background-image: url("../img/hero-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  // @media (min-resolution: 144dpi),
+  // (min-resolution: 1.5dppx) {
+  //   background-image: url("../img/hero-mobile@2x.jpg");
+  // }
+}
+
+.promo__title {
+  width: 260px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: @brown;
+}
+
+.promo__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.promo__link {
+  position: relative;
+
+  display: block;
+  padding: 33px 81.25% 33px 9.375%;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: @white;
+  text-decoration: none;
+
+  outline: none;
+
+  transition: background-color 0.1s linear, color 0.1s linear;
+  &:active {
+    color: fade(@white, 30%);
+  }
+}
+
+.promo__item--interior .promo__link {
+  background-color: @light-green;
+  &:hover,
+  &:focus {
+    background-color: #59d5bc;
+  }
+}
+
+.promo__item--toys .promo__link {
+  background-color: @green;
+  &:hover,
+  &:focus {
+    background-color: #46c1ae;
+  }
+}
+
+.promo__delivery-info {
+  display: none;
+}
