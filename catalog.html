@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Мишка</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <title>Каталог товаров магазина «Мишка»</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="page-header">
       <div class="page-header__wrapper">
-        <h1 class="visually-hidden">Сайта магазина товаров ручной работы Mishka</h1>
         <nav class="main-nav  main-nav--closed  main-nav--nojs">
           <div class="main-nav__menu">
             <a class="main-nav__logo  logo" href="index.html">
@@ -21,21 +19,26 @@
           <ul class="site-list">
             <li class="site-list__item  site-list__item--active"><a class="site-list__link">Каталог товаров</a></li>
             <li class="site-list__item"><a class="site-list__link" href="form.html">Вязание на заказ</a></li>
-          </ul>
-          <ul class="user-list">
-            <li class="user-list__item  user-list__item--search"><a class="user-list__link" href="search.html">Поиск по сайту</a>
+            <li class="site-list__item  site-list__item--search">
+              <form class="site-list__form" action="#" method="GET">
+                <label class="site-list__field" for="search">
+                  <span class="visually-hidden">Поиск</span>
+                  <input class="site-list__input" type="search" name="search" id="search">
+                </label>
+                <input class="site-list__submit" type="submit">
+              </form>
             </li>
-            <li class="user-list__item  user-list__item--cart"><a class="user-list__link" href="cart.html">Корзина: пока пуста</a>
+            <li class="site-list__item  site-list__item--cart"><a class="site-list__link" href="cart.html">Корзина: пока пуста</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <section class="catalog">
-      <h2 class="catalog__title">Каталог товаров</h2>
+      <h1 class="catalog__title">Каталог товаров</h1>
       <ul class="catalog__list">
         <li class="catalog-item">
-          <h3 class="catalog-item__title">Зайчик-попрыгайчик</h3>
+          <h2 class="catalog-item__title">Зайчик-попрыгайчик</h2>
           <p class="catalog-item__descr">Рост 30 см, вес 200 г</p>
           <img class="catalog-item__pic" src="img/.jpg" alt="Зайчик-попрыгайчик">
           <div class="catalog-item__price-wrapper">
@@ -44,7 +47,7 @@
           </div>
         </li>
         <li class="catalog-item">
-          <h3 class="catalog-item__title">Корзинка для белья</h3>
+          <h2 class="catalog-item__title">Корзинка для белья</h2>
           <p class="catalog-item__descr">Диаметр 15 см, высота 10 см</p>
           <img class="catalog-item__pic" src="img/.jpg" alt="Корзинка для белья">
           <div class="catalog-item__price-wrapper">
@@ -53,7 +56,7 @@
           </div>
         </li>
         <li class="catalog-item">
-          <h3 class="catalog-item__title">Большая корзинка для игрушек</h3>
+          <h2 class="catalog-item__title">Большая корзинка для игрушек</h2>
           <p class="catalog-item__descr">Диаметр 30 см, высота 30 см</p>
           <img class="catalog-item__pic" src="img/.jpg" alt="Большая корзинка для игрушек">
           <div class="catalog-item__price-wrapper">
@@ -83,13 +86,13 @@
           <p class="visually-hidden">Мы в соцсетях:</p>
           <ul class="social__list">
             <li class="social__item">
-              <a class="social-btn  social-btn--instagram" href="#"><span class="visually-hidden">Инстаграм</span></a>
+              <a class="social__btn  social__btn--instagram" href="#"><span class="visually-hidden">Инстаграм</span></a>
             </li>
             <li class="social__item">
-              <a class="social-btn  social-btn--facebook" href="#"><span class="visually-hidden">Фейсбук</span></a>
+              <a class="social__btn  social__btn--facebook" href="#"><span class="visually-hidden">Фейсбук</span></a>
             </li>
             <li class="social__item">
-              <a class="social-btn  social-btn--twitter" href="#"><span class="visually-hidden">Твиттер</span></a>
+              <a class="social__btn  social__btn--twitter" href="#"><span class="visually-hidden">Твиттер</span></a>
             </li>
           </ul>
         </div>
@@ -99,6 +102,25 @@
         </div>
       </div>
     </footer>
+    <section class="modal-cart">
+      <h2 class="modal-cart__title">Добавить в корзину</h2>
+      <p class="modal-cart__descr">Выберите размер:</p>
+      <form class="modal-cart__form">
+        <p>
+          <input class="modal-cart__input  visually-hidden" type="radio" id="small" name="size" value="small">
+          <label class="modal-cart__label" for="small">S</label>
+        </p>
+        <p>
+          <input class="modal-cart__input  visually-hidden" type="radio" id="middle" name="size" value="middle">
+          <label class="modal-cart__label" for="middle">M</label>
+        </p>
+        <p>
+          <input class="modal-cart__input  visually-hidden" type="radio" id="large" name="size" value="large">
+          <label class="modal-cart__label" for="large">L</label>
+        </p>
+        <button class="modal-cart__close  btn" type="submit">Добавить</button>
+      </form>
+    </section>
     <!-- <script src="js/script.js"></script> -->
   </body>
 </html>

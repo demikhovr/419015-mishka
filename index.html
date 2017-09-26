@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Мишка</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <title>«Мишка»</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -21,11 +20,16 @@
           <ul class="site-list">
             <li class="site-list__item"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
             <li class="site-list__item"><a class="site-list__link" href="form.html">Вязание на заказ</a></li>
-          </ul>
-          <ul class="user-list">
-            <li class="user-list__item  user-list__item--search"><a class="user-list__link" href="search.html">Поиск по сайту</a>
+            <li class="site-list__item  site-list__item--search">
+              <form class="site-list__form" action="#" method="GET">
+                <label class="site-list__field" for="search">
+                  <span class="visually-hidden">Поиск</span>
+                  <input class="site-list__input" type="search" name="search" id="search">
+                </label>
+                <input class="site-list__submit" type="submit">
+              </form>
             </li>
-            <li class="user-list__item  user-list__item--cart"><a class="user-list__link" href="cart.html">Корзина: пока пуста</a>
+            <li class="site-list__item  site-list__item--cart"><a class="site-list__link" href="cart.html">Корзина: пока пуста</a>
             </li>
           </ul>
         </nav>
@@ -47,10 +51,10 @@
     </section>
     <section class="featured">
       <div class="featured__wrapper">
-        <h2 class="featured__title-inner">
-          <span class="featured__title">Товар недели</span>
-          <span class="featured__subtitle">Вязаные корзинки</span>
-        </h2>
+        <header class="featured__title-inner">
+          <h2 class="featured__title">Товар недели</h2>
+          <h3 class="featured__subtitle">Вязаные корзинки</h3>
+        </header>
         <p class="featured__descr">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах.</p>
         <table class="featured__parameters">
           <tr>
@@ -72,39 +76,41 @@
       </div>
     </section>
     <section class="info">
-      <h2 class="info__title">Коротко о нас:</h2>
-      <ul class="info__list">
-        <li class="info__item  info__item--ecological">Экологически чистые материалы</li>
-        <li class="info__item  info__item--style">Скандинавский стиль по российской цене</li>
-        <li class="info__item  info__item--likes">Увеличивает лайки на фотографиях</li>
-        <li class="info__item  info__item--handmade">Связано вручную с любовью и умилением</li>
-        <li class="info__item  info__item--support">Поддержка отечественного производителя</li>
-        <li class="info__item  info__item--package">Поставляется в подарочной упаковке</li>
-      </ul>
+      <div class="info__wrapper">
+        <h2 class="info__title">Коротко о нас:</h2>
+        <ul class="info__list">
+          <li class="info__item  info__item--ecological">Экологически чистые материалы</li>
+          <li class="info__item  info__item--style">Скандинавский стиль по российской цене</li>
+          <li class="info__item  info__item--likes">Увеличивает лайки на фотографиях</li>
+          <li class="info__item  info__item--handmade">Связано вручную с любовью и умилением</li>
+          <li class="info__item  info__item--support">Поддержка отечественного производителя</li>
+          <li class="info__item  info__item--package">Поставляется в подарочной упаковке</li>
+        </ul>
+      </div>
     </section>
-    <section class="reviews  slider">
+    <section class="reviews">
       <div class="reviews__wrapper">
         <h2 class="reviews__title">Отзывы</h2>
         <ul class="reviews__list">
-          <li class="reviews__item  slider__item">
+          <li class="reviews__item">
             <h3 class="reviews__author">Анастасия Красильникова</h3>
             <p class="reviews__nickname">@misssssiskras</p>
             <p class="reviews__comment">Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали более стильнее, а также набирают больше лайков!</p>
           </li>
-          <li class="reviews__item  slider__item">
+          <li class="reviews__item">
             <h3 class="reviews__author">Анастасия Красильникова</h3>
             <p class="reviews__nickname">@misssssiskras</p>
             <p class="reviews__comment">Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали более стильнее, а также набирают больше лайков!</p>
           </li>
-          <li class="reviews__item  slider__item">
+          <li class="reviews__item">
             <h3 class="reviews__author">Анастасия Красильникова</h3>
             <p class="reviews__nickname">@misssssiskras</p>
             <p class="reviews__comment">Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали более стильнее, а также набирают больше лайков!</p>
           </li>
         </ul>
-        <div class="slider__toggles">
-          <button class="slider__toggle  slider__toggle--prev" type="button"><span class="visually-hidden">Предыдущий отзыв</span></button>
-          <button class="slider__toggle  slider__toggle--next" type="button"><span class="visually-hidden">Следующий отзыв</span></button>
+        <div class="reviews__toggles">
+          <button class="reviews__toggle  reviews__toggle--prev" type="button"><span class="visually-hidden">Предыдущий отзыв</span></button>
+          <button class="reviews__toggle  reviews__toggle--next" type="button"><span class="visually-hidden">Следующий отзыв</span></button>
         </div>
         <a class="reviews__btn  btn" href="reviews.html">Написать</a>
       </div>
@@ -129,13 +135,13 @@
           <p class="visually-hidden">Мы в соцсетях:</p>
           <ul class="social__list">
             <li class="social__item">
-              <a class="social-btn  social-btn--instagram" href="#"><span class="visually-hidden">Инстаграм</span></a>
+              <a class="social__btn  social__btn--instagram" href="#"><span class="visually-hidden">Инстаграм</span></a>
             </li>
             <li class="social__item">
-              <a class="social-btn  social-btn--facebook" href="#"><span class="visually-hidden">Фейсбук</span></a>
+              <a class="social__btn  social__btn--facebook" href="#"><span class="visually-hidden">Фейсбук</span></a>
             </li>
             <li class="social__item">
-              <a class="social-btn  social-btn--twitter" href="#"><span class="visually-hidden">Твиттер</span></a>
+              <a class="social__btn  social__btn--twitter" href="#"><span class="visually-hidden">Твиттер</span></a>
             </li>
           </ul>
         </div>
