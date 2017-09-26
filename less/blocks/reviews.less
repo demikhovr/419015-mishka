@@ -105,19 +105,15 @@
     opacity: 0.3;
   }
 
-  &--prev {
-
-    &::before {
+  &--prev::before {
       background-image: url("../img/icon-left-arrow.svg");
-    }
   }
 
   &--next {
     border-left: 0;
+  }
 
-    &::before {
-      background-image: url("../img/icon-right-arrow.svg");
-    }
-
+  &--next::before {
+    background-image: url("../img/icon-right-arrow.svg");
   }
 }
