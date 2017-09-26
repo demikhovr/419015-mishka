@@ -27,6 +27,7 @@
   display: none;
   flex-direction: column;
   padding-bottom: 30px;
+
   &:nth-child(1) {
     display: flex;
   }
@@ -82,6 +83,7 @@
   border: 1px solid @grey;
   outline: none;
   cursor: pointer;
+
   &::before {
     content: "";
     position: absolute;
@@ -93,20 +95,26 @@
 
     transition: opacity 0.1s linear;
   }
+
   &:hover::before,
   &:focus::before {
     opacity: 0.6;
   }
+
   &:active::before {
     opacity: 0.3;
   }
+
   &--prev {
+
     &::before {
       background-image: url("../img/icon-left-arrow.svg");
     }
   }
+
   &--next {
     border-left: 0;
+
     &::before {
       background-image: url("../img/icon-right-arrow.svg");
     }
