@@ -16,7 +16,7 @@
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint 'less/**/*.less' --syntax less",
+    "stylelint": "stylelint less/**/*.less --syntax less",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp style",
     "start": "gulp serve"

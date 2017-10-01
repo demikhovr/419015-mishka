@@ -2,6 +2,7 @@
   display: block;
 
   font-weight: 700;
+  font-family: "OpenSans", "Arial", sans-serif;
   text-align: center;
   color: @dark-grey;
   text-transform: uppercase;
@@ -10,8 +11,9 @@
   background-color: @white;
   border: 2px solid @dark-grey;
   outline: none;
+  cursor: pointer;
 
-  transition: background-color 0.1s linear, color 0.1s linear;
+  transition: background-color 0.1s linear, color 0.1s linear, border-color 0.1s linear;
 
   &:hover,
   &:focus {
@@ -20,7 +22,26 @@
     background-color: @dark-grey;
   }
 
-  &:focus {
+  &:active {
     color: fade(@white, 30%);
+  }
+
+  &--green {
+    color: @white;
+
+    background-color: @light-green;
+    border-color: @light-green;
+
+    &:hover,
+    &:focus {
+      color: @white;
+
+      background-color: #46c1ae;
+      border-color: #46c1ae;
+    }
+
+    &:active {
+      color: fade(@white, 30%);
+    }
   }
 }

@@ -2,12 +2,16 @@
   margin-bottom: 55px;
 }
 
+.info__wrapper {
+  .container();
+}
+
 .info__title {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 31px;
 
   font-weight: 700;
-  font-size: 24px;
+  font-size: 25px;
   line-height: 30px;
   color: @black;
 }
@@ -20,12 +24,15 @@
 }
 
 .info__item {
-  margin-bottom: 30px;
+  box-sizing: border-box;
+  max-width: 260px;
+  margin: 0 auto;
+  margin-bottom: 28px;
   padding-top: 55px;
 
   font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 17px;
+  line-height: 20px;
   color: @black;
 
   background-repeat: no-repeat;
@@ -36,25 +43,76 @@
 
   &--ecological {
     background-image: url("../img/icon-feature-flower.svg");
+    background-position: left 7px top 1px;
   }
 
   &--style {
     background-image: url("../img/icon-feature-money.svg");
+    background-position: left 0 top 2px;
   }
 
   &--likes {
     background-image: url("../img/icon-feature-heart.svg");
+    background-position: left 7px top 6px;
   }
 
   &--handmade {
     background-image: url("../img/icon-feature-ball.svg");
+    background-position: left 4px top 4px;
   }
 
   &--support {
     background-image: url("../img/icon-feature-rocket.svg");
+    background-position: left 0 top 5px;
   }
 
   &--package {
     background-image: url("../img/icon-feature-gift.svg");
+    background-position: left 3px top 3px;
+  }
+}
+
+@media @tablet-widths {
+  .info {
+    margin-bottom: 54px;
+  }
+
+  .info__title {
+    margin-bottom: 48px;
+
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .info__list {
+    column-count: 2;
+    column-gap: 0;
+  }
+
+  .info__item {
+    min-width: 334px;
+    margin: 0;
+    margin-bottom: 56px;
+
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media @desktop-widths {
+  .info {
+    margin-bottom: 60px;
+  }
+
+  .info__title {
+    padding-left: 175px;
+
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .info__list {
+    padding-right: 175px;
+    padding-left: 175px;
   }
 }
