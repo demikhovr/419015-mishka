@@ -46,8 +46,3 @@ featured.addEventListener('click', function(event) {
   modalCart.classList.add('modal--show');
   modalOverlay.classList.add('modal-overlay--show');
 });
-
-
-
-
-
