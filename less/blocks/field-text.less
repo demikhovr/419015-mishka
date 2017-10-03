@@ -1,3 +1,232 @@
 .field-text {
-  //
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 22px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field-text__label {
+  width: 100%;
+  margin-bottom: 5px;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  color: @black;
+
+  cursor: pointer;
+}
+
+.field-text--phone .field-text__label,
+.field-text--email .field-text__label,
+.field-text--textarea .field-text__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 17px;
+  color: @light-green;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+
+    flex-grow: 1;
+    width: auto;
+    height: 1px;
+    margin-left: 25px;
+
+    background-color: @light-green;
+  }
+}
+
+.field-text__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px 15px 0;
+
+  font-size: 17px;
+  line-height: 20px;
+  font-family: inherit;
+  color: @dark-grey;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid @dark-grey;
+  outline: none;
+
+  transition: border-color 0.1s linear;
+
+  &:hover,
+  &:focus {
+    border-color: @light-green;
+  }
+
+  &::-webkit-input-placeholder {
+    font-size: 17px;
+    line-height: 20px;
+    color: fade(@dark-grey, 30%);
+  }
+
+  &::-moz-placeholder {
+    font-size: 17px;
+    line-height: 20px;
+    color: fade(@dark-grey, 30%);
+  }
+
+  &:-ms-placeholder {
+    font-size: 17px;
+    line-height: 20px;
+    color: fade(@dark-grey, 30%);
+  }
+
+  &--textarea {
+    min-height: 142px;
+    margin-top: 12px;
+    padding: 0;
+    padding: 13px 16px 15px 15px;
+
+    border: 2px solid @dark-grey;
+
+    resize: none;
+  }
+}
+
+.field-text svg {
+  position: absolute;
+
+  transition: fill 0.1s;
+
+  fill: fade(@black, 20%);
+}
+
+.field-text:hover svg {
+  fill: @light-green;
+}
+
+.field-text__input:focus + svg {
+  fill: @light-green;
+}
+
+.field-text--phone svg {
+  right: 8px;
+  bottom: 17px;
+}
+
+.field-text--email svg {
+  right: 4px;
+  bottom: 15px;
+}
+
+@media @tablet-widths {
+  .field-text {
+    flex-wrap: nowrap;
+    margin-top: 3px;
+    margin-bottom: 29px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .field-text__label {
+    width: auto;
+    margin-right: 26px;
+    margin-bottom: 0;
+
+    font-size: 19px;
+    line-height: 19px;
+  }
+
+  .field-text--phone .field-text__label,
+  .field-text--email .field-text__label,
+  .field-text--textarea .field-text__label {
+    position: absolute;
+    top: 12px;
+    left: -167px;
+
+    margin-bottom: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .field-text--textarea .field-text__label {
+    top: 28px;
+  }
+
+  .field-text__input {
+    padding: 10px 16px 15px 17px;
+
+    font-size: 17px;
+    line-height: 20px;
+    font-family: inherit;
+    color: @dark-grey;
+
+    border: none;
+    border-bottom: 2px solid @dark-grey;
+    outline: none;
+
+    transition: border-color 0.1s linear;
+
+    &:hover,
+    &:focus {
+      border-color: @light-green;
+    }
+
+    &::-webkit-input-placeholder {
+      font-size: 19px;
+    }
+
+    &::-moz-placeholder {
+      font-size: 19px;
+    }
+
+    &:-ms-placeholder {
+      font-size: 19px;
+    }
+
+    &--textarea {
+      min-height: 142px;
+      margin-top: 12px;
+      padding: 0;
+      padding: 13px 16px 15px 15px;
+
+      border: 2px solid @dark-grey;
+
+      resize: none;
+    }
+  }
+}
+
+@media @desktop-widths {
+  .field-text {
+    margin-top: 5px;
+  }
+
+  .field-text--phone .field-text__label,
+  .field-text--email .field-text__label,
+  .field-text--textarea .field-text__label {
+    left: -113px;
+  }
+
+  .field-text--textarea .field-text__label {
+    top: 25px;
+  }
+
+  .field-text__input {
+    &--textarea {
+      margin-top: 8px;
+    }
+  }
 }

@@ -1,7 +1,26 @@
+.page-header__delivery-info {
+  display: none;
+}
+
 @media @tablet-widths {
   .page-header__wrapper {
+    position: relative;
+
     border-bottom: 1px solid @grey;
 
     .container();
+  }
+
+  .page-header__delivery-info {
+    position: absolute;
+    top: 120%;
+    right: 50px;
+    z-index: 55;
+
+    display: block;
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 24px;
   }
 }

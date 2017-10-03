@@ -42,6 +42,11 @@
   }
 }
 
+.site-list__item--active .site-list__link {
+  cursor: pointer;
+  color: fade(@black, 30%);
+}
+
 .site-list__item--search .site-list__link {
   display: none;
 }
@@ -297,23 +302,23 @@
   .site-list__item--catalog {
     position: static;
 
-    order: initial;
+    order: 1;
   }
 
   .site-list__item--order {
     position: static;
 
-    order: initial;
+    order: 2;
     margin-right: auto;
   }
 
   .site-list__item--search {
-    order: initial;
+    order: 3;
     margin-left: 0;
   }
 
   .site-list__item--cart {
-    order: initial;
+    order: 4;
   }
 
   .site-list__item--new {
