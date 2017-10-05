@@ -1,26 +1,12 @@
 .main-nav {
   position: relative;
-}
 
-.main-nav__menu {
-  position: relative;
-  z-index: 50;
-
-  padding: 22px 30px 22px;
-
-  background-color: @white;
-  border-bottom: 1px solid @grey;
-}
-
-.main-nav__logo {
-  display: block;
-  margin: 0 auto;
+  min-height: 80px;
 }
 
 .main-nav__toggle {
   display: none;
 }
-
 
 @media @mobile-widths-only {
   .main-nav__toggle {
@@ -89,51 +75,29 @@
     }
   }
 
-  .main-nav--opened .site-list {
-    position: absolute;
-    right: 0;
-    left: 0;
-    z-index: 10;
-
-    display: block;
-
-    animation-name: showmenu;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-
-    animation-fill-mode: backwards;
+  .main-nav--closed .site-list__item--show {
+    display: none;
   }
 
-  .main-nav--nojs .site-list {
+  .main-nav--opened .site-list__item--show {
     display: block;
   }
 
   .main-nav--nojs .main-nav__toggle {
     display: none;
   }
-}
 
-@media @tablet-widths {
-  .main-nav__menu {
-    position: absolute;
-    top: 22px;
-    left: 0;
+  .main-nav--nojs .site-list {
+    position: static;
+  }
 
-    width: 113px;
-    padding: 0;
-
-    background-color: transparent;
-    border-bottom: none;
+  .main-nav--nojs .site-list__item--show {
+    display: block;
   }
 }
 
-@media @desktop-widths {
-  .main-nav__menu {
-    top: 9px;
-    left: 50%;
-
-    width: 149px;
-
-    transform: translateX(-50%);
+@media @tablet-widths {
+  .main-nav {
+    min-height: 89px;
   }
 }
