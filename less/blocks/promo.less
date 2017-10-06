@@ -32,11 +32,16 @@
   list-style: none;
 }
 
+.promo__item {
+  display: flex;
+}
+
 .promo__link {
   position: relative;
 
   display: block;
-  padding: 26px 81.25% 29px 9%;
+  flex-grow: 1;
+  padding: 26px 80px 29px 9%;
 
   font-weight: 700;
   font-size: 19px;
@@ -46,7 +51,7 @@
 
   outline: none;
 
-  transition: background-color 0.1s linear, color 0.1s linear;
+  transition: background-color 0.1s linear, color 0.1s linear, transform 0.1s linear;
 
   &:active {
     color: fade(@white, 30%);
@@ -145,12 +150,11 @@
   }
 
   .promo__link {
-    padding: 28px 81.25% 31px 10.5%;
+    padding: 28px 110px 31px 10.5%;
+    box-sizing: border-box;
 
     font-size: 20px;
     line-height: 30px;
-
-    transition: transform 0.1s linear;
 
     &:hover,
     &:focus {
@@ -190,6 +194,6 @@
   }
 
   .promo__link {
-    padding: 28px 81.25% 31px 7%;
+    padding: 28px 110px 31px 37px;
   }
 }

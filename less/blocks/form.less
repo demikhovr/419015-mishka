@@ -182,6 +182,7 @@
     width: 25%;
     margin-bottom: 0;
     padding-top: 16px;
+    padding-right: 20px;
   }
 
   .form__field-title span {
@@ -265,6 +266,10 @@
     padding-right: 225px;
   }
 
+  .form__field--color .form__field-wrapper {
+    padding-right: 50px;
+  }
+
   .form__field--contacts .form__field-wrapper {
     margin-bottom: 26px;
   }
@@ -272,6 +277,10 @@
   .form__field-title {
     width: 20%;
     padding-left: 62px;
+  }
+
+  .form__field--color .form__field-title {
+    width: 16.6%;
   }
 
   .form__field-title span {
@@ -284,8 +293,18 @@
     width: 80%;
   }
 
+  .form__field-list--columns {
+    width: 83.4%;
+    justify-content: flex-start;
+  }
+
   .form__field-list--columns .form__field-item {
-    width: 25.1%;
+    width: 200px;
+    margin-right: 7.31%;
+
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
   }
 
   .form__btn-wrapper {

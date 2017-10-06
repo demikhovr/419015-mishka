@@ -110,12 +110,17 @@
   .catalog__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .catalog__item {
-    width: 30.1%;
+    width: 316px;
+    margin-right: 4.85%;
     margin-bottom: 57px;
+
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
 
     &:last-child {
       margin-bottom: 57px;
