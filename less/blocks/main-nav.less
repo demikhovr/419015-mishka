@@ -1,27 +1,103 @@
 .main-nav {
-  border-bottom: 1px solid @grey;
+  position: relative;
+
+  min-height: 80px;
 }
 
-.main-nav__menu {
-  padding: 22px 30px 22px;
-
-  background-color: @white;
+.main-nav__toggle {
+  display: none;
 }
 
-.site-list {
-  margin: 0;
-  padding: 0;
+@media @mobile-widths-only {
+  .main-nav__toggle {
+    position: absolute;
+    top: 38px;
+    right: 31px;
+    z-index: 25;
 
-  list-style: none;
+    display: block;
+    width: 20px;
+    height: 14px;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 25;
+
+      width: 20px;
+      height: 2px;
+
+      background-color: @brown;
+      transform: translateX(-50%);
+
+      transition: box-shadow 0.3s 0.4s, bottom 0.3s 0.3s, top 0.3s 0.3s, transform 0.3s, width 0.3s;
+    }
+
+    &::before {
+      top: 0;
+
+      box-shadow: 0 6px 0 0 @brown;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .main-nav--opened .main-nav__toggle {
+    &::before,
+    &::after {
+      width: 27px;
+
+      box-shadow: 0 6px 0 0 transparent;
+
+      transition: box-shadow 0.2s 0s, bottom 0.3s, top 0.3s, transform 0.3s 0.3s, width 0.3s;
+    }
+
+    &::before {
+      top: 6px;
+
+      transform: translate(-50%) rotate3d(0, 0, 1, 45deg);
+    }
+
+    &::after {
+      bottom: 6px;
+
+      transform: translate(-50%) rotate3d(0, 0, 1, -45deg);
+    }
+  }
+
+  .main-nav--closed .site-list__item--show {
+    display: none;
+  }
+
+  .main-nav--opened .site-list__item--show {
+    display: block;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .site-list {
+    position: static;
+  }
+
+  .main-nav--nojs .site-list__item--show {
+    display: block;
+  }
 }
 
-.site-list__link {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: @black;
-  text-decoration: none;
-
-  background-color: @white;
-  outline: none;
+@media @tablet-widths {
+  .main-nav {
+    min-height: 89px;
+  }
 }

@@ -1,36 +1,58 @@
 .featured {
-  margin-bottom: 30px;
+  position: relative;
+
+  margin-bottom: 27px;
+  padding-bottom: 42px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 6px;
+
+    background-image: repeating-linear-gradient(to right, @grey 0%, @grey 3%, transparent 3%, transparent 6%);
+    background-repeat: repeat-x;
+  }
 }
 
 .featured__wrapper {
-  padding-bottom: 35px;
+  .container();
 }
 
 .featured__title-inner {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .featured__title {
-  font-size: 16px;
-  line-height: 16px;
+  order: 2;
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 20px;
   color: @light-green;
   text-transform: uppercase;
 }
 
 .featured__subtitle {
-  margin-bottom: 10px;
+  margin: 0;
+  margin-bottom: 6px;
 
-  font-size: 24px;
+  font-size: 25px;
   line-height: 30px;
   color: @black;
 }
 
 .featured__descr {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 
-  font-size: 14px;
+  font-size: 15px;
   line-height: 24px;
 }
 
@@ -43,36 +65,198 @@
 }
 
 .featured__parameters td {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 9px;
+  padding-bottom: 10px;
 
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
-  color: @dark-grey;
 
   border-bottom: 1px solid @grey;
+
+  &:first-child {
+    width: 37%;
+  }
 }
 
 .featured__pic {
   display: block;
   width: 260px;
   max-height: 315px;
+  margin: 0 auto;
+  margin-bottom: 24px;
 }
 
 .featured__price {
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 
   font-weight: 700;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 24px;
   text-align: center;
-  color: @dark-grey;
 }
 
 .featured__btn {
-  padding: 12px 85px 12px;
+  padding: 14px 40px 14px;
 
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+@media @tablet-widths {
+  .featured {
+    margin-bottom: 49px;
+    padding: 0;
+    padding-bottom: 70px;
+
+    &::after {
+      height: 17px;
+
+      background-size: auto 17px;
+    }
+  }
+
+  .featured__wrapper {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+
+  .featured__title-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 43px;
+    padding-right: 29px;
+  }
+
+  .featured__title {
+    width: 70px;
+
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .featured__subtitle {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .featured__inner {
+    box-sizing: border-box;
+    width: 43.4%;
+    padding-right: 0;
+    padding-bottom: 110px;
+  }
+
+  .featured__descr {
+    margin-bottom: 36px;
+
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .featured__parameters {
+    margin-bottom: 55px;
+  }
+
+  .featured__parameters td {
+    font-size: 15px;
+
+    &:first-child {
+      width: 33.5%;
+    }
+  }
+
+  .featured__pic {
+    width: 333px;
+    max-height: 404px;
+    margin: 0;
+    padding-top: 8px;
+  }
+
+  .featured__price-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+
+    width: 37.8%;
+  }
+
+  .featured__price {
+    margin-top: auto;
+    margin-bottom: 34px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .featured__btn {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+@media @desktop-widths {
+  .featured {
+    margin-bottom: 59px;
+    padding-bottom: 96px;
+
+    &::after {
+      height: 23px;
+
+      background-size: auto 23px;
+    }
+  }
+
+  .featured__title-inner {
+    position: absolute;
+    top: 60px;
+    left: 46px;
+
+    justify-content: flex-start;
+    width: 1000px;
+    padding-right: 0;
+    padding-left: 50px;
+  }
+
+  .featured__title {
+    order: 1;
+    margin-right: 56px;
+  }
+
+  .featured__subtitle {
+    order: 2;
+
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .featured__inner {
+    flex-grow: 1;
+    width: 49%;
+    padding-top: 166px;
+    padding-right: 58px;
+    padding-left: 175px;
+  }
+
+  .featured__descr {
+    margin-bottom: 48px;
+  }
+
+  .featured__pic {
+    width: 525px;
+    height: 636px;
+    max-height: 636px;
+  }
+
+  .featured__price-wrapper {
+    width: 292px;
+    margin-left: 175px;
+  }
 }

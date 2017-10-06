@@ -1,3 +1,29 @@
-.social {
-  //
+.social__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.social__btn {
+  display: flex;
+
+  outline: none;
+}
+
+.social__btn path {
+  transition: fill 0.1s linear;
+}
+
+.social__btn:hover path,
+.social__btn:focus path {
+  fill: #46c1ae;
+}
+
+.social__btn:active path {
+  fill: fade(#46c1ae, 30%);
 }

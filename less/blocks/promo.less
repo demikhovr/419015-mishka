@@ -1,5 +1,5 @@
 .promo {
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 
   background-color: #fafafa;
 }
@@ -7,23 +7,19 @@
 .promo__wrapper {
   position: relative;
 
-  padding-top: 90px;
+  padding-top: 70px;
 
   background-image: url("../img/hero-mobile@1x.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
-  // @media (min-resolution: 144dpi),
-  // (min-resolution: 1.5dppx) {
-  //   background-image: url("../img/hero-mobile@2x.jpg");
-  // }
+  background-position: center top -19px;
 }
 
 .promo__title {
-  width: 260px;
+  width: 81.25%;
   margin: 0 auto;
-  margin-bottom: 120px;
+  margin-bottom: 122px;
 
-  font-size: 24px;
+  font-size: 27px;
   line-height: 30px;
   text-align: center;
   color: @brown;
@@ -36,21 +32,26 @@
   list-style: none;
 }
 
+.promo__item {
+  display: flex;
+}
+
 .promo__link {
   position: relative;
 
   display: block;
-  padding: 33px 81.25% 33px 9.375%;
+  flex-grow: 1;
+  padding: 26px 80px 29px 9%;
 
   font-weight: 700;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 24px;
   color: @white;
   text-decoration: none;
 
   outline: none;
 
-  transition: background-color 0.1s linear, color 0.1s linear;
+  transition: background-color 0.1s linear, color 0.1s linear, transform 0.1s linear;
 
   &:active {
     color: fade(@white, 30%);
@@ -75,6 +76,124 @@
   }
 }
 
-.promo__delivery-info {
-  display: none;
+.promo__link svg {
+  position: absolute;
+
+  transition: fill 0.1s linear;
+
+  fill: fade(@dark-green, 50%);
+}
+
+.promo__link:hover svg,
+.promo__link:focus svg {
+  fill: fade(@dark-green, 70%);
+}
+
+.promo__link:active svg {
+  fill: fade(@dark-green, 30%);
+}
+
+.promo__item--interior svg {
+  top: 23px;
+  right: 36px;
+}
+
+.promo__item--toys svg {
+  top: 21px;
+  right: 27px;
+}
+
+@media @tablet-widths {
+  .promo {
+    position: relative;
+
+    margin-bottom: 45px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      left: 0;
+      z-index: 50;
+
+      height: 24px;
+
+      background-image: repeating-linear-gradient(to right, @white 0%, @white 3%, transparent 3%, transparent 6%),
+        linear-gradient(to top, white 0, white 12px, transparent 12px, transparent 24px);
+      background-repeat: repeat-x;
+    }
+  }
+
+  .promo__wrapper {
+    position: relative;
+
+    padding-top: 153px;
+
+    .container();
+  }
+
+  .promo__title {
+    margin-bottom: 373px;
+
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .promo__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .promo__item {
+    width: 50%;
+  }
+
+  .promo__link {
+    padding: 28px 110px 31px 10.5%;
+    box-sizing: border-box;
+
+    font-size: 20px;
+    line-height: 30px;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+    }
+  }
+
+  .promo__item--interior svg {
+    top: 30px;
+  }
+
+  .promo__item--toys svg {
+    top: 32px;
+    right: 34px;
+  }
+}
+
+@media @desktop-widths {
+  .promo {
+    margin-bottom: 63px;
+
+    &::after {
+      bottom: -14px;
+
+      height: 34px;
+
+      background-image: repeating-linear-gradient(to right, @white 0%, @white 3%, transparent 3%, transparent 6%),
+        linear-gradient(to top, white 0, white 20px, transparent 20px, transparent 34px);
+    }
+  }
+
+  .promo__title {
+    margin-bottom: 359px;
+
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .promo__link {
+    padding: 28px 110px 31px 37px;
+  }
 }

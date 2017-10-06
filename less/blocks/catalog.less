@@ -1,3 +1,129 @@
 .catalog {
-  //
+  margin-bottom: 30px;
+}
+
+.catalog__title-wrapper {
+  margin-bottom: 30px;
+  padding-top: 70px;
+  padding-bottom: 76px;
+
+  background-color: @light-grey;
+}
+
+.catalog__title {
+  width: 81.25%;
+  margin: 0 auto;
+
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 30px;
+  text-align: center;
+  color: @black;
+}
+
+.catalog__wrapper {
+  .container();
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.catalog__item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media @tablet-widths {
+  .catalog {
+    margin-bottom: 53px;
+  }
+
+  .catalog__title-wrapper {
+    position: relative;
+
+    margin-bottom: 67px;
+    padding-top: 95px;
+    padding-bottom: 92px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      left: 0;
+      z-index: 50;
+
+      height: 24px;
+
+      background-image: repeating-linear-gradient(to right, @white 0%, @white 3%, transparent 3%, transparent 6%),
+        linear-gradient(to top, white 0, white 12px, transparent 12px, transparent 24px);
+      background-repeat: repeat-x;
+    }
+  }
+
+  .catalog__title {
+    width: 65.1%;
+
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .catalog__item {
+    margin-bottom: 54px;
+  }
+}
+
+@media @desktop-widths {
+  .catalog {
+    margin-bottom: 0;
+  }
+
+  .catalog__title-wrapper {
+    margin-bottom: 111px;
+    padding-top: 93px;
+    padding-bottom: 121px;
+
+    &::after {
+      bottom: -14px;
+
+      height: 34px;
+
+      background-image: repeating-linear-gradient(to right, @white 0%, @white 3%, transparent 3%, transparent 6%),
+        linear-gradient(to top, white 0, white 20px, transparent 20px, transparent 34px);
+    }
+  }
+
+  .catalog__title {
+    width: 60.9%;
+
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .catalog__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .catalog__item {
+    width: 316px;
+    margin-right: 4.85%;
+    margin-bottom: 57px;
+
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 57px;
+    }
+  }
 }

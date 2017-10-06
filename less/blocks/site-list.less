@@ -1,3 +1,389 @@
 .site-list {
-  //
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 5;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-list__item {
+  display: flex;
+  box-sizing: border-box;
+
+  background-color: @white;
+  border-bottom: 1px solid @grey;
+
+  &--logo {
+    justify-content: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  &--new,
+  &--sale,
+  &--delivery {
+    display: none;
+  }
+}
+
+.site-list__link {
+  position: relative;
+
+  display: block;
+  box-sizing: border-box;
+  padding: 26px 30px 28px 23.75%;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: @black;
+  text-decoration: none;
+
+  outline: none;
+
+  transition: color 0.1s linear;
+
+  &:hover,
+  &:focus {
+    color: fade(@black, 60%);
+  }
+
+  &:active {
+    color: fade(@black, 30%);
+  }
+}
+
+.site-list__item--active .site-list__link {
+  color: fade(@black, 30%);
+
+  cursor: pointer;
+}
+
+.site-list__item--search .site-list__link {
+  display: none;
+}
+
+.site-list__form {
+  position: relative;
+}
+
+.site-list__field {
+  display: block;
+}
+
+.site-list__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 23px 30px 25px 23.75%;
+
+  font: inherit;
+  font-weight: 700;
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    cursor: initial;
+  }
+
+  &::-webkit-input-placeholder {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    color: @black;
+
+    background-color: @white;
+
+    transition: color 0.1s linear;
+  }
+
+  &:hover::-webkit-input-placeholder,
+  &:focus::-webkit-input-placeholder {
+    color: fade(@black, 60%);
+  }
+
+  &::-moz-placeholder {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: @black;
+
+    background-color: @white;
+
+    transition: color 0.1s linear;
+  }
+
+  &:hover::-moz-placeholder,
+  &:focus::-moz-placeholder {
+    color: fade(@black, 60%);
+  }
+
+  &:-ms-placeholder {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: @black;
+
+    background-color: @white;
+
+    transition: color 0.1s linear;
+  }
+}
+
+.site-list__submit {
+  position: absolute;
+  top: 31px;
+  right: 84.375%;
+
+  width: 18px;
+  height: 19px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.site-list__submit path {
+  transition: fill 0.1s linear;
+
+  fill: fade(@black, 20%);
+}
+
+.site-list__submit:hover path,
+.site-list__submit:focus path {
+  fill: @light-green;
+}
+
+.site-list__submit:active path {
+  transition: fill 0.1s linear;
+
+  fill: fade(@light-green, 30%);
+}
+
+.site-list__item--cart svg {
+  position: absolute;
+  top: 50%;
+  right: 84.375%;
+
+  transform: translateY(-50%);
+}
+
+.site-list__item--cart path {
+  transition: fill 0.1s linear;
+
+  fill: fade(@black, 20%);
+}
+
+.site-list__item--cart:hover path,
+.site-list__item--cart:focus path {
+  fill: @light-green;
+}
+
+.site-list__item--cart:active path {
+  transition: fill 0.1s linear;
+
+  fill: fade(@light-green, 30%);
+}
+
+@media @tablet-widths {
+  .site-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .site-list__item {
+    margin-bottom: 17px;
+
+    background-color: transparent;
+
+    &--logo {
+      flex-grow: 1;
+      justify-content: flex-start;
+      order: 1;
+      width: 47%;
+      padding: 22px 0 20px 50px;
+    }
+
+    &--catalog {
+      order: 4;
+      margin-right: 37px;
+      padding-left: 50px;
+
+      border-bottom: none;
+    }
+
+    &--order {
+      order: 5;
+
+      border-bottom: none;
+    }
+
+    &--search {
+      order: 2;
+      width: 84px;
+
+      border: 1px solid @grey;
+      border-top: none;
+    }
+
+    &--cart {
+      order: 3;
+      width: 314px;
+      padding-right: 50px;
+
+      text-align: right;
+    }
+
+    &--delivery {
+      display: flex;
+      order: 6;
+      margin-left: auto;
+      padding-right: 50px;
+
+      font-size: 15px;
+      line-height: 24px;
+
+      border-bottom: none;
+    }
+  }
+
+  .site-list__link {
+    flex-grow: 1;
+    padding: 0;
+
+    font-size: 17px;
+
+    border-bottom: none;
+  }
+
+  .site-list__item--catalog .site-list__link,
+  .site-list__item--order .site-list__link {
+    font-size: 15px;
+  }
+
+  .site-list__item--search .site-list__link {
+    display: flex;
+    padding: 36px 32px 33px 32px;
+  }
+
+  .site-list__item--cart .site-list__link {
+    padding: 31px 0 30px 0;
+  }
+
+  .site-list__item--cart svg {
+    top: 50%;
+    left: 31px;
+
+    transform: translateY(-50%);
+  }
+
+  .site-list__item--search path {
+    transition: fill 0.1s linear;
+
+    fill: fade(@black, 20%);
+  }
+
+  .site-list__item--search:hover path,
+  .site-list__item--search:focus path {
+    fill: @light-green;
+  }
+
+  .site-list__item--search:active path {
+    transition: fill 0.1s linear;
+
+    fill: fade(@light-green, 30%);
+  }
+
+  .site-list__form {
+    display: none;
+  }
+
+  .site-list__input {
+    border-bottom: none;
+  }
+}
+
+@media @desktop-widths {
+  .site-list__item {
+    &--logo {
+      flex-grow: 0;
+      order: 3;
+      width: 28%;
+      padding-top: 9px;
+      padding-bottom: 7px;
+      padding-left: 75px;
+    }
+
+    &--catalog {
+      order: 1;
+      width: 20.4%;
+      margin-right: 0;
+
+      border-right: 1px solid @grey;
+      border-bottom: 1px solid @grey;
+    }
+
+    &--order {
+      order: 2;
+      width: 16.8%;
+
+      background-color: transparent;
+      border-bottom: 1px solid @grey;
+    }
+
+    &--search {
+      order: 4;
+    }
+
+    &--cart {
+      order: 5;
+      width: 27.3%;
+    }
+
+    &--new {
+      display: flex;
+      order: 6;
+      padding-right: 60px;
+      padding-left: 50px;
+
+      border-bottom: none;
+    }
+
+    &--sale {
+      display: flex;
+      order: 7;
+
+      border-bottom: none;
+    }
+
+    &--delivery {
+      order: 8;
+      padding-right: 50px;
+    }
+  }
+
+  .site-list__item--catalog .site-list__link,
+  .site-list__item--order .site-list__link {
+    padding-top: 31px;
+    padding-bottom: 30px;
+
+    font-size: 17px;
+  }
+
+  .site-list__item--order .site-list__link {
+    padding-left: 35px;
+  }
+
+  .site-list__item--new .site-list__link,
+  .site-list__item--sale .site-list__link {
+    font-size: 15px;
+  }
 }

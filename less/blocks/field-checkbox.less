@@ -1,3 +1,140 @@
 .field-checkbox {
-  //
+  margin-bottom: 21px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field-checkbox__label {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 40px;
+  padding-left: 24%;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  color: @black;
+  text-transform: none;
+
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 25;
+
+    transition: opacity 0.1s linear, border-color 0.1s linear;
+  }
+
+  &::before {
+    top: 50%;
+    left: 0;
+
+    box-sizing: border-box;
+    width: 40px;
+    height: 39px;
+
+    border: 2px solid @dark-grey;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    top: 12px;
+    left: 9px;
+
+    width: 22px;
+    height: 16px;
+
+    background-image: url("../img/icon-tick.svg");
+    background-repeat: no-repeat;
+    background-size: 22px 16px;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    border-color: @light-green;
+  }
+
+  &:active::before {
+    border-color: fade(@dark-grey, 30%);
+  }
+
+  &:active::after {
+    opacity: 1;
+  }
+}
+
+.field-checkbox__input:focus + .field-checkbox__label::before {
+  border-color: @light-green;
+}
+
+.field-checkbox__input:active + .field-checkbox__label::before {
+  border-color: fade(@dark-grey, 30%);
+}
+
+.field-checkbox__input[id="color-white"]:checked + .field-checkbox__label::after,
+  .field-checkbox__input[id="color-grey"]:checked + .field-checkbox__label::after,
+  .field-checkbox__input[id="color-tiffany"]:checked + .field-checkbox__label::after,
+  .field-checkbox__input[id="color-black"]:checked + .field-checkbox__label::after,
+  .field-checkbox__input[id="color-pink"]:checked + .field-checkbox__label::after,
+  .field-checkbox__input[id="color-orange"]:checked + .field-checkbox__label::after {
+  opacity: 1;
+}
+
+.field-checkbox__input[id="color-white"]:checked + .field-checkbox__label:active::after,
+  .field-checkbox__input[id="color-grey"]:checked + .field-checkbox__label:active::after,
+  .field-checkbox__input[id="color-tiffany"]:checked + .field-checkbox__label:active::after,
+  .field-checkbox__input[id="color-black"]:checked + .field-checkbox__label:active::after,
+  .field-checkbox__input[id="color-pink"]:checked + .field-checkbox__label:active::after,
+  .field-checkbox__input[id="color-orange"]:checked + .field-checkbox__label:active::after {
+  opacity: 0;
+}
+
+@media @tablet-widths {
+  .field-checkbox {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .field-checkbox__label {
+    width: 100%;
+    min-height: 52px;
+    padding-left: 34%;
+
+    font-size: 19px;
+    line-height: 19px;
+
+    &::before {
+      top: 50%;
+
+      width: 54px;
+      height: 52px;
+    }
+
+    &::after {
+      top: 16px;
+      left: 11px;
+
+      width: 33px;
+      height: 22px;
+
+      background-size: 33px 22px;
+    }
+  }
+}
+
+@media @desktop-widths {
+  .field-checkbox__label {
+    padding-left: 82px;
+  }
 }

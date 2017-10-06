@@ -1,0 +1,146 @@
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -1000%);
+  }
+
+  70% {
+    transform: translate(-50%, -45%);
+  }
+
+  90% {
+    transform: translate(-50%, -53%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+
+  display: none;
+  box-sizing: border-box;
+  width: 320px;
+  margin: 0 auto;
+  padding: 30px 30px 46px 30px;
+
+  text-align: center;
+
+  background-color: @white;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 5px 10px 0 fade(@black, 25%);
+  transform: translate(-50%, -50%);
+
+  &--show {
+    display: block;
+
+    animation: bounce 0.6s;
+  }
+}
+
+.modal__title {
+  width: 150px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: @black;
+  text-transform: uppercase;
+}
+
+.modal__descr {
+  margin: 0;
+  margin-bottom: 24px;
+
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.modal__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__form p {
+  margin: 0;
+}
+
+.modal__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 82px;
+  height: 52px;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 17px;
+
+  border: 2px solid fade(@dark-grey, 10%);
+  outline: none;
+  cursor: pointer;
+
+  transition: border-color 0.1s linear;
+
+  &:hover {
+    border-color: fade(@dark-grey, 30%);
+  }
+
+  &:active {
+    border-color: @light-green;
+  }
+}
+
+.modal__input:focus + .modal__label {
+  border-color: @light-green;
+}
+
+.modal__input[id="small"]:checked + .modal__label,
+  .modal__input[id="middle"]:checked + .modal__label,
+  .modal__input[id="large"]:checked + .modal__label {
+  border-color: @light-green;
+}
+
+.modal__close {
+  width: 100%;
+  margin-top: 31px;
+  padding: 15px 20px 15px;
+
+  font-size: 17px;
+  line-height: 17px;
+}
+
+@media @tablet-widths {
+  .modal {
+    box-sizing: border-box;
+    width: 568px;
+    padding: 33px 108px 46px 108px;
+  }
+
+  .modal__title {
+    width: 354px;
+    margin-bottom: 13px;
+
+    font-size: 30px;
+    line-height: 57px;
+  }
+
+  .modal__descr {
+    margin-bottom: 22px;
+
+    font-size: 17px;
+  }
+
+  .modal__label {
+    width: 112px;
+  }
+}

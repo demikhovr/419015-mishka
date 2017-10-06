@@ -1,3 +1,50 @@
 .logo {
-  //
+  display: block;
+  width: 86px;
+  height: 35px;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: opacity 0.1s linear;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--footer {
+    display: none;
+  }
+}
+
+@media @tablet-widths {
+  .logo {
+    width: 113px;
+    height: 46px;
+
+    &--footer {
+      display: block;
+      width: 102px;
+      height: 34px;
+
+      background-color: lightblue; /* Временнно */
+    }
+  }
+}
+
+@media @desktop-widths {
+  .logo {
+    width: 149px;
+    height: 72px;
+
+    &--footer {
+      width: 102px;
+      height: 34px;
+    }
+  }
 }

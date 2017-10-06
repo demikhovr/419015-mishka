@@ -1,3 +1,137 @@
 .field-radio {
-  //
+  margin-bottom: 7px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field-radio__label {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: auto;
+  min-height: 40px;
+  padding: 8px 40px 6px 24%;
+
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  color: @black;
+  text-transform: none;
+
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 25;
+
+    box-sizing: border-box;
+
+    transition: opacity 0.1s linear, border-color 0.1s linear;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: transparent;
+    border: 2px solid @dark-grey;
+    border-radius: 50%;
+  }
+
+  &::after {
+    top: 12px;
+    left: 12px;
+
+    width: 16px;
+    height: 16px;
+
+    background-color: @light-green;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    border-color: @light-green;
+  }
+
+  &:active::before {
+    border-color: fade(@dark-grey, 30%);
+  }
+
+  &:active::after {
+    opacity: 1;
+  }
+}
+
+.field-radio__input:focus + .field-radio__label::before {
+  border-color: @light-green;
+}
+
+.field-radio__input:focus + .field-radio__label::after {
+  opacity: 1;
+}
+
+.field-radio__input[id="accessory"]:checked + .field-radio__label::after,
+  .field-radio__input[id="toy"]:checked + .field-radio__label::after {
+  opacity: 1;
+}
+
+.field-radio__input[id="accessory"]:checked + .field-radio__label:active::after,
+  .field-radio__input[id="toy"]:checked + .field-radio__label:active::after {
+  opacity: 0;
+}
+
+@media @tablet-widths {
+  .field-radio {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .field-radio__label {
+    width: auto;
+    min-height: 52px;
+    padding: 0;
+    padding-left: 16%;
+
+    font-size: 19px;
+    line-height: 19px;
+
+    &::before {
+      top: 52%;
+      left: 0;
+
+      width: 52px;
+      height: 52px;
+
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: 52%;
+      left: 16px;
+
+      width: 21px;
+      height: 21px;
+
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@media @desktop-widths {
+  .field-radio__label {
+    padding-left: 11.5%;
+  }
 }
