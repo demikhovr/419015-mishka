@@ -11,6 +11,10 @@
   }
 }
 
+.field-text:hover .field-text__input {
+  border-color: @light-green;
+}
+
 .field-text__label {
   width: 100%;
   margin-bottom: 5px;
@@ -137,6 +141,14 @@
     }
   }
 
+  .field-text--phone,
+  .field-text--email,
+  .field-text--textarea {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+  }
+
   .field-text__label {
     width: auto;
     margin-right: 26px;
@@ -149,10 +161,9 @@
   .field-text--phone .field-text__label,
   .field-text--email .field-text__label,
   .field-text--textarea .field-text__label {
-    position: absolute;
-    top: 12px;
-    left: -167px;
-
+    box-sizing: border-box;
+    width: 25%;
+    margin-right: 0;
     margin-bottom: 0;
 
     &::after {
@@ -165,6 +176,8 @@
   }
 
   .field-text__input {
+    flex-grow: 1;
+    width: 75%;
     padding: 10px 16px 15px 17px;
 
     font-size: 17px;
@@ -196,6 +209,7 @@
     }
 
     &--textarea {
+      width: 75%;
       min-height: 142px;
       margin-top: 12px;
       padding: 13px 16px 15px 15px;
@@ -215,16 +229,15 @@
   .field-text--phone .field-text__label,
   .field-text--email .field-text__label,
   .field-text--textarea .field-text__label {
-    left: -113px;
-  }
-
-  .field-text--textarea .field-text__label {
-    top: 25px;
+    width: 20%;
+    padding-left: 62px;
   }
 
   .field-text__input {
+    width: 80%;
+
     &--textarea {
-      margin-top: 8px;
+      margin-top: 10px;
     }
   }
 }

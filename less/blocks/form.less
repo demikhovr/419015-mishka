@@ -32,6 +32,9 @@
 
 .form__field {
   margin-bottom: 32px;
+  padding: 0;
+
+  border: none;
 
   &:last-of-type {
     margin-bottom: 16px;
@@ -39,10 +42,6 @@
 }
 
 .form__field-wrapper {
-  padding: 0;
-
-  border: none;
-
   .container();
 }
 
@@ -52,6 +51,7 @@
 
 .form__field-title {
   width: 100%;
+  margin: 0;
   margin-bottom: 25px;
 }
 
@@ -169,21 +169,19 @@
   }
 
   .form__field-wrapper {
-    position: relative;
-
-    padding-left: 217px;
+    display: flex;
   }
 
   .form__field--contacts .form__field-wrapper {
+    display: block;
     margin-bottom: 26px;
   }
 
   .form__field-title {
-    position: absolute;
-    top: 18px;
-    left: 50px;
-
-    width: 100px;
+    box-sizing: border-box;
+    width: 25%;
+    margin-bottom: 0;
+    padding-top: 16px;
   }
 
   .form__field-title span {
@@ -193,6 +191,8 @@
   }
 
   .form__field-list {
+    width: 75%;
+
     &--columns {
       display: flex;
       flex-wrap: wrap;
@@ -201,7 +201,7 @@
   }
 
   .form__field-list--columns .form__field-item {
-    width: 48%;
+    width: 47.5%;
   }
 
   .form__btn-wrapper {
@@ -263,7 +263,6 @@
 
   .form__field-wrapper {
     padding-right: 225px;
-    padding-left: 225px;
   }
 
   .form__field--contacts .form__field-wrapper {
@@ -271,15 +270,18 @@
   }
 
   .form__field-title {
-    left: 115px;
-
-    width: 100px;
+    width: 20%;
+    padding-left: 62px;
   }
 
   .form__field-title span {
     &::after {
       display: none;
     }
+  }
+
+  .form__field-list {
+    width: 80%;
   }
 
   .form__field-list--columns .form__field-item {

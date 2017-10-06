@@ -10,16 +10,16 @@
     <header class="page-header">
       <div class="page-header__wrapper">
         <nav class="main-nav  main-nav--closed  main-nav--nojs">
-          <div class="main-nav__menu">
-            <a class="main-nav__logo  logo" href="index.html">
-              <img src="img/logo-mobile.svg" alt="Mishka">
-            </a>
-            <button class="main-nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
-          </div>
+          <button class="main-nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
           <ul class="site-list">
-            <li class="site-list__item  site-list__item--active  site-list__item--catalog"><a class="site-list__link">Каталог товаров</a></li>
-            <li class="site-list__item  site-list__item--order"><a class="site-list__link" href="form.html">Вязание на заказ</a></li>
-            <li class="site-list__item  site-list__item--search">
+            <li class="site-list__item  site-list__item--logo">
+              <a class="logo">
+                <img src="img/logo-mobile.svg" alt="Mishka">
+              </a>
+            </li>
+            <li class="site-list__item  site-list__item--show  site-list__item--catalog  site-list__item--active"><a class="site-list__link">Каталог товаров</a></li>
+            <li class="site-list__item  site-list__item--show  site-list__item--order"><a class="site-list__link" href="form.html">Вязание на заказ</a></li>
+            <li class="site-list__item  site-list__item--show  site-list__item--search">
               <a class="site-list__link" href="search.html">
                 <svg class="site-list__icon-search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.6px" height="17.6px" viewBox="-0.8 -0.8 17.6 17.6" enable-background="new -0.8 -0.8 17.6 17.6" xml:space="preserve">
                   <path fill="#231F20" d="M16.47,14.93l-3.415-3.415C14.02,10.226,14.6,8.634,14.6,6.899c0-4.253-3.447-7.699-7.7-7.699 S-0.8,2.646-0.8,6.899s3.446,7.7,7.699,7.7c1.734,0,3.326-0.58,4.613-1.546l3.417,3.416c0.203,0.202,0.418,0.33,0.771,0.33 c0.607,0,1.1-0.492,1.1-1.1C16.8,15.459,16.739,15.2,16.47,14.93z M1.399,6.899c0-3.038,2.462-5.5,5.5-5.5s5.5,2.462,5.5,5.5 s-2.462,5.5-5.5,5.5S1.399,9.938,1.399,6.899z"/>
@@ -38,7 +38,7 @@
                 </button>
               </form>
             </li>
-            <li class="site-list__item  site-list__item--cart">
+            <li class="site-list__item  site-list__item--show  site-list__item--cart">
               <a class="site-list__link" href="cart.html">
                 <span>Корзина: пока пуста</span>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.294px" height="18.849px" viewBox="264.205 370.961 20.294 18.849" enable-background="new 264.205 370.961 20.294 18.849" xml:space="preserve">
@@ -52,9 +52,9 @@
             <li class="site-list__item  site-list__item--sale">
               <a class="site-list__link" href="sale.html">Распродажа</a>
             </li>
+            <li class="site-list__item  site-list__item--delivery">Бесплатная доставка по России</li>
           </ul>
         </nav>
-        <p class="page-header__delivery-info">Бесплатная доставка по России</p>
       </div>
     </header>
     <section class="catalog">

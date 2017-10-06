@@ -10,16 +10,16 @@
     <header class="page-header">
       <div class="page-header__wrapper">
         <nav class="main-nav  main-nav--closed  main-nav--nojs">
-          <div class="main-nav__menu">
-            <a class="main-nav__logo  logo" href="index.html">
-              <img src="img/logo-mobile.svg" alt="Mishka">
-            </a>
-            <button class="main-nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
-          </div>
+          <button class="main-nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
           <ul class="site-list">
-            <li class="site-list__item  site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
-            <li class="site-list__item  site-list__item--active  site-list__item--order"><a class="site-list__link">Вязание на заказ</a></li>
-            <li class="site-list__item  site-list__item--search">
+            <li class="site-list__item  site-list__item--logo">
+              <a class="logo" href="index.html">
+                <img src="img/logo-mobile.svg" alt="Mishka">
+              </a>
+            </li>
+            <li class="site-list__item  site-list__item--show  site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
+            <li class="site-list__item  site-list__item--show  site-list__item--order  site-list__item--active"><a class="site-list__link">Вязание на заказ</a></li>
+            <li class="site-list__item  site-list__item--show  site-list__item--search">
               <a class="site-list__link" href="search.html">
                 <svg class="site-list__icon-search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.6px" height="17.6px" viewBox="-0.8 -0.8 17.6 17.6" enable-background="new -0.8 -0.8 17.6 17.6" xml:space="preserve">
                   <path fill="#231F20" d="M16.47,14.93l-3.415-3.415C14.02,10.226,14.6,8.634,14.6,6.899c0-4.253-3.447-7.699-7.7-7.699 S-0.8,2.646-0.8,6.899s3.446,7.7,7.699,7.7c1.734,0,3.326-0.58,4.613-1.546l3.417,3.416c0.203,0.202,0.418,0.33,0.771,0.33 c0.607,0,1.1-0.492,1.1-1.1C16.8,15.459,16.739,15.2,16.47,14.93z M1.399,6.899c0-3.038,2.462-5.5,5.5-5.5s5.5,2.462,5.5,5.5 s-2.462,5.5-5.5,5.5S1.399,9.938,1.399,6.899z"/>
@@ -38,7 +38,7 @@
                 </button>
               </form>
             </li>
-            <li class="site-list__item  site-list__item--cart">
+            <li class="site-list__item  site-list__item--show  site-list__item--cart">
               <a class="site-list__link" href="cart.html">
                 <span>Корзина: пока пуста</span>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.294px" height="18.849px" viewBox="264.205 370.961 20.294 18.849" enable-background="new 264.205 370.961 20.294 18.849" xml:space="preserve">
@@ -52,9 +52,9 @@
             <li class="site-list__item  site-list__item--sale">
               <a class="site-list__link" href="sale.html">Распродажа</a>
             </li>
+            <li class="site-list__item  site-list__item--delivery">Бесплатная доставка по России</li>
           </ul>
         </nav>
-        <p class="page-header__delivery-info">Бесплатная доставка по России</p>
       </div>
     </header>
     <section class="form">
@@ -63,9 +63,9 @@
       </header>
       <p class="form__descr">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
       <form action="#" method="POST">
-        <div class="form__field">
-          <fieldset class="form__field-wrapper">
-            <legend class="form__field-title"><span>Тип</span></legend>
+        <fieldset class="form__field">
+          <div class="form__field-wrapper">
+            <h2 class="form__field-title"><span>Тип</span></h2>
             <ul class="form__field-list">
               <li class="form__field-item  field-radio">
                 <input class="field-radio__input  visually-hidden" type="radio" id="accessory" name="type" value="accessory" checked>
@@ -76,11 +76,11 @@
                 <label class="field-radio__label" for="toy">Детская игрушка</label>
               </li>
             </ul>
-          </fieldset>
-        </div>
-        <div class="form__field  form__field--greybg">
-          <fieldset class="form__field-wrapper">
-            <legend class="form__field-title"><span>Цвет</span></legend>
+          </div>
+        </fieldset>
+        <fieldset class="form__field  form__field--greybg">
+          <div class="form__field-wrapper">
+            <h2 class="form__field-title"><span>Цвет</span></h2>
             <ul class="form__field-list  form__field-list--columns">
               <li class="form__field-item  field-checkbox">
                 <input class="field-checkbox__input  visually-hidden" type="checkbox" id="color-white" name="color-white" checked>
@@ -107,11 +107,11 @@
                 <label class="field-checkbox__label" for="color-orange">Оранжевый</label>
               </li>
             </ul>
-          </fieldset>
-        </div>
-        <div class="form__field">
-          <fieldset class="form__field-wrapper">
-            <legend class="form__field-title"><span>ФИО</span></legend>
+          </div>
+        </fieldset>
+        <fieldset class="form__field">
+          <div class="form__field-wrapper">
+            <h2 class="form__field-title"><span>ФИО</span></h2>
             <ul class="form__field-list">
               <li class="form__field-item  field-text">
                 <label class="field-text__label" for="name">Имя:</label>
@@ -126,11 +126,11 @@
                 <input class="field-text__input" type="text" id="patronymic" placeholder="Отчество, если желаете">
               </li>
             </ul>
-          </fieldset>
-        </div>
-        <div class="form__field  form__field--contacts  form__field--greybg">
-          <fieldset class="form__field-wrapper">
-            <legend class="visually-hidden">Ваш телефон:</legend>
+          </div>
+        </fieldset>
+        <fieldset class="form__field  form__field--contacts  form__field--greybg">
+          <div class="form__field-wrapper">
+            <h2 class="visually-hidden">Ваши контакты:</h2>
             <p class="form__field-item  field-text  field-text--phone">
               <label class="field-text__label" for="phone">Тел</label>
               <input class="field-text__input" type="tel" id="phone" placeholder="+7 ХХХ ХХ ХХ">
@@ -147,9 +147,6 @@
                 </g>
               </svg>
             </p>
-          </fieldset>
-          <fieldset class="form__field-wrapper">
-            <legend class="visually-hidden">Ваш e-mail:</legend>
             <p class="form__field-item  field-text  field-text--email">
               <label class="field-text__label" for="email">E-Mail</label>
               <input class="field-text__input" type="email" id="email" placeholder="Ваш E-mail">
@@ -157,17 +154,17 @@
                 <path id="mail" d="M28,5H4C1.791,5,0,6.792,0,9v13c0,2.209,1.791,4,4,4h24c2.209,0,4-1.791,4-4V9 C32,6.792,30.209,5,28,5z M2,10.25l6.999,5.25L2,20.75V10.25z M30,22c0,1.104-0.898,2-2,2H4c-1.103,0-2-0.896-2-2l7.832-5.875 l4.368,3.277c0.533,0.397,1.166,0.6,1.8,0.6c0.633,0,1.266-0.201,1.799-0.6l4.369-3.277L30,22L30,22z M30,20.75l-7-5.25l7-5.25 V20.75z M17.199,18.602c-0.35,0.263-0.763,0.4-1.199,0.4s-0.851-0.139-1.2-0.4L10.665,15.5l-0.833-0.625L2,9.001V9 c0-1.103,0.897-2,2-2h24c1.102,0,2,0.897,2,2L17.199,18.602z"/>
               </svg>
             </p>
-          </fieldset>
-        </div>
-        <div class="form__field">
-          <fieldset class="form__field-wrapper">
-            <legend class="visually-hidden">Ваш комментарий</legend>
+          </div>
+        </fieldset>
+        <fieldset class="form__field">
+          <div class="form__field-wrapper">
+            <h2 class="visually-hidden">Ваш комментарий</h2>
             <p class="form__field-item  field-text  field-text--textarea">
               <label class="field-text__label" for="wishes">Доп</label>
               <textarea class="field-text__input  field-text__input--textarea" name="wishes" id="wishes" placeholder="Опишите все ваши пожелания к заказу"></textarea>
             </p>
-          </fieldset>
-        </div>
+          </div>
+        </fieldset>
         <footer class="form__btn-wrapper">
           <small class="form__notice">*Поля обязательны для заполнения</small>
           <button class="form__btn  btn" type="submit">Отправить заказ</button>
