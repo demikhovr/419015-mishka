@@ -1,11 +1,13 @@
 .logo {
   display: block;
-  width: 86px;
-  height: 35px;
 
   outline: none;
   cursor: pointer;
 
+  -webkit-tap-highlight-color: transparent;
+}
+
+.logo--header {
   transition: opacity 0.1s linear;
 
   &:hover,
@@ -16,33 +18,45 @@
   &:active {
     opacity: 0.3;
   }
+}
 
-  &--footer {
-    display: none;
-  }
+.logo--footer {
+  display: none;
+}
+
+.logo--header img {
+  display: block;
+  width: 86px;
+  height: 35px;
 }
 
 @media @tablet-widths {
-  .logo {
+  .logo--footer {
+    display: block;
+  }
+
+  .logo--header img {
     width: 113px;
     height: 46px;
+  }
 
-    &--footer {
-      display: block;
-      width: 102px;
-      height: 34px;
-    }
+  .logo--footer svg {
+    transition: fill 0.1s linear;
+  }
+
+  .logo--footer:hover svg,
+  .logo--footer:focus svg {
+    fill: @green;
+  }
+
+  .logo--footer:active svg {
+    fill: fade(@green, 30%);
   }
 }
 
 @media @desktop-widths {
-  .logo {
+  .logo img {
     width: 149px;
     height: 72px;
-
-    &--footer {
-      width: 102px;
-      height: 34px;
-    }
   }
 }

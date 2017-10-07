@@ -48,23 +48,24 @@
   .catalog__title-wrapper {
     position: relative;
 
-    margin-bottom: 67px;
+    margin-bottom: 69px;
     padding-top: 95px;
-    padding-bottom: 92px;
+    padding-bottom: 90px;
 
     &::after {
       content: "";
       position: absolute;
       right: 0;
-      bottom: -7px;
+      bottom: -1px;
       left: 0;
       z-index: 50;
 
       height: 24px;
 
-      background-image: repeating-linear-gradient(to right, @white 0%, @white 3%, transparent 3%, transparent 6%),
-        linear-gradient(to top, white 0, white 12px, transparent 12px, transparent 24px);
+      background-image: url("../img/bg-zigzag-fill.svg");
       background-repeat: repeat-x;
+      background-position: center;
+      background-size: 770px 24px;
     }
   }
 
@@ -91,12 +92,11 @@
     padding-bottom: 121px;
 
     &::after {
-      bottom: -14px;
+      bottom: 0;
 
       height: 34px;
 
-      background-image: repeating-linear-gradient(to right, @white 0%, @white 3%, transparent 3%, transparent 6%),
-        linear-gradient(to top, white 0, white 20px, transparent 20px, transparent 34px);
+      background-size: 1150px 34px;
     }
   }
 
