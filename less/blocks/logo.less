@@ -2,12 +2,13 @@
   display: block;
 
   outline: none;
-  cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
 }
 
-.logo--header {
+.logo--header[href] {
+  cursor: pointer;
+
   transition: opacity 0.1s linear;
 
   &:hover,
