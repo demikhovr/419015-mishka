@@ -91,6 +91,8 @@
 
   transition: border-color 0.1s linear;
 
+  -webkit-tap-highlight-color: transparent;
+
   &:hover {
     border-color: fade(@dark-grey, 30%);
   }
@@ -104,9 +106,7 @@
   border-color: @light-green;
 }
 
-.modal__input[id="small"]:checked + .modal__label,
-  .modal__input[id="middle"]:checked + .modal__label,
-  .modal__input[id="large"]:checked + .modal__label {
+.modal__input:checked + .modal__label {
   border-color: @light-green;
 }
 

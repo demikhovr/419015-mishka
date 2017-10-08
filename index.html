@@ -184,9 +184,9 @@
           <picture>
             <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
             <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
-            <img src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Схема проезда">
+            <img class="contacts__map-pic" src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Схема проезда">
           </picture>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d999.3005389216919!2d30.321970111954304!3d59.93876143729258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1506861894195" height="457" style="border:0" allowfullscreen></iframe>
+          <div class="contacts__google-maps" id="map"></div>
         </div>
         <a class="contacts__btn  btn" href="contacts.html">Напишите нам</a>
       </div>
@@ -278,6 +278,9 @@
       </form>
     </section>
     <div class="modal-overlay"></div>
+    <script src="js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoB13VczwQLMXApGLYkuxZhS3KvZkvp7w&callback=initMap"
+    async defer></script>
     <script src="js/script.js"></script>
   </body>
 </html>
