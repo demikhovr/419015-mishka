@@ -49,6 +49,6 @@ function initMap() {
     position: {lat: 59.938549, lng: 30.322993},
     map: map,
     title: 'Мишка',
-    icon: '../img/icon-map-pin.svg'
+    icon: 'img/icon-map-pin.svg'
   });
 };
