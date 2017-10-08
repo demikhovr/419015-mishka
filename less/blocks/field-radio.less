@@ -82,14 +82,28 @@
   opacity: 1;
 }
 
-.field-radio__input[id="accessory"]:checked + .field-radio__label::after,
-  .field-radio__input[id="toy"]:checked + .field-radio__label::after {
+.field-radio__input:checked + .field-radio__label::after {
   opacity: 1;
 }
 
-.field-radio__input[id="accessory"]:checked + .field-radio__label:active::after,
-  .field-radio__input[id="toy"]:checked + .field-radio__label:active::after {
+.field-radio__input:checked + .field-radio__label:active::after {
   opacity: 0;
+}
+
+.field-radio__input:disabled + .field-radio__label {
+  color: fade(@black, 30%);
+}
+
+.field-radio__input:disabled + .field-radio__label::before {
+  border-color: fade(@dark-grey, 30%);
+}
+
+.field-radio__input:disabled + .field-radio__label::after {
+  opacity: 0;
+}
+
+.field-radio__input:disabled:checked + .field-radio__label::after {
+  opacity: 0.3;
 }
 
 @media @tablet-widths {
