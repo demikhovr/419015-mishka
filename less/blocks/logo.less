@@ -1,20 +1,29 @@
 .logo {
   display: block;
-  width: 86px;
-  height: 35px;
 
   outline: none;
-  cursor: pointer;
 
-  transition: opacity 0.1s linear;
+  -webkit-tap-highlight-color: transparent;
 
-  &:hover,
-  &:focus {
-    opacity: 0.6;
+  &--header[href] {
+    cursor: pointer;
+
+    transition: opacity 0.1s linear;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
-  &:active {
-    opacity: 0.3;
+  &--header img {
+    display: block;
+    width: 86px;
+    height: 35px;
   }
 
   &--footer {
@@ -24,25 +33,37 @@
 
 @media @tablet-widths {
   .logo {
-    width: 113px;
-    height: 46px;
+    &--header img {
+      width: 113px;
+      height: 46px;
+    }
 
     &--footer {
       display: block;
-      width: 102px;
-      height: 34px;
+
+      cursor: pointer;
+    }
+
+    &--footer svg {
+      transition: fill 0.1s linear;
+    }
+
+    &--footer:hover svg,
+    &--footer:focus svg {
+      fill: @green;
+    }
+
+    &--footer:active svg {
+      fill: fade(@green, 30%);
     }
   }
 }
 
 @media @desktop-widths {
   .logo {
-    width: 149px;
-    height: 72px;
-
-    &--footer {
-      width: 102px;
-      height: 34px;
+    &--header img {
+      width: 149px;
+      height: 72px;
     }
   }
 }

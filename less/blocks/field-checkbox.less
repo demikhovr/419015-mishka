@@ -24,6 +24,8 @@
 
   cursor: pointer;
 
+  -webkit-tap-highlight-color: transparent;
+
   &::before,
   &::after {
     content: "";
@@ -71,30 +73,46 @@
   }
 }
 
-.field-checkbox__input:focus + .field-checkbox__label::before {
-  border-color: @light-green;
-}
+.field-checkbox__input {
+  &:focus + .field-checkbox__label::before {
+    border-color: @light-green;
+  }
 
-.field-checkbox__input:active + .field-checkbox__label::before {
-  border-color: fade(@dark-grey, 30%);
-}
+  &:active + .field-checkbox__label::before {
+    border-color: fade(@dark-grey, 30%);
+  }
 
-.field-checkbox__input[id="color-white"]:checked + .field-checkbox__label::after,
-  .field-checkbox__input[id="color-grey"]:checked + .field-checkbox__label::after,
-  .field-checkbox__input[id="color-tiffany"]:checked + .field-checkbox__label::after,
-  .field-checkbox__input[id="color-black"]:checked + .field-checkbox__label::after,
-  .field-checkbox__input[id="color-pink"]:checked + .field-checkbox__label::after,
-  .field-checkbox__input[id="color-orange"]:checked + .field-checkbox__label::after {
-  opacity: 1;
-}
+  &:active + .field-checkbox__label::after {
+    opacity: 1;
+  }
 
-.field-checkbox__input[id="color-white"]:checked + .field-checkbox__label:active::after,
-  .field-checkbox__input[id="color-grey"]:checked + .field-checkbox__label:active::after,
-  .field-checkbox__input[id="color-tiffany"]:checked + .field-checkbox__label:active::after,
-  .field-checkbox__input[id="color-black"]:checked + .field-checkbox__label:active::after,
-  .field-checkbox__input[id="color-pink"]:checked + .field-checkbox__label:active::after,
-  .field-checkbox__input[id="color-orange"]:checked + .field-checkbox__label:active::after {
-  opacity: 0;
+  &:checked:active + .field-checkbox__label::after {
+    opacity: 0;
+  }
+
+  &:checked + .field-checkbox__label::after {
+    opacity: 1;
+  }
+
+  &:checked + .field-checkbox__label:active::after {
+    opacity: 0;
+  }
+
+  &:disabled + .field-checkbox__label {
+    color: fade(@black, 30%);
+  }
+
+  &:disabled + .field-checkbox__label::before {
+    border-color: fade(@dark-grey, 30%);
+  }
+
+  &:disabled + .field-checkbox__label::after {
+    opacity: 0;
+  }
+
+  &:disabled:checked + .field-checkbox__label::after {
+    opacity: 0.3;
+  }
 }
 
 @media @tablet-widths {

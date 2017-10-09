@@ -11,9 +11,7 @@
 
 .page-footer__social {
   margin-bottom: 20px;
-  padding-right: 62px;
-  padding-bottom: 25px;
-  padding-left: 57px;
+  padding: 0 62px 25px 57px;
 
   border-bottom: 1px solid #e5e5e5;
 }
@@ -30,11 +28,24 @@
   line-height: 19px;
   color: @black;
   text-decoration: none;
+
   outline: none;
+
   transition: color 0.1s linear;
+
+  -webkit-tap-highlight-color: transparent;
 
   &:active {
     color: fade(@black, 30%);
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: #46c1ae;
+  }
+
+  &:active svg {
+    fill: fade(#46c1ae, 30%);
   }
 }
 
@@ -44,22 +55,13 @@
   fill: @light-green;
 }
 
-.page-footer__copyright-link:hover svg,
-.page-footer__copyright-link:focus svg {
-  fill: #46c1ae;
-}
-
-.page-footer__copyright-link:active svg {
-  fill: fade(#46c1ae, 30%);
-}
-
 @media @tablet-widths {
   .page-footer__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 55px;
-    padding-bottom: 60px;
+    padding-top: 51px;
+    padding-bottom: 56px;
   }
 
   .page-footer__social {
