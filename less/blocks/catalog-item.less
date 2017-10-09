@@ -1,6 +1,14 @@
 .catalog-item {
   display: flex;
   flex-direction: column;
+
+  &:hover .catalog-item__inner {
+    box-shadow: 0 6px 10px 0 fade(@black, 10%);
+  }
+
+  &:active .catalog-item__inner {
+    box-shadow: 0 3px 5px 0 fade(@black, 10%);
+  }
 }
 
 .catalog-item__inner {
@@ -13,42 +21,34 @@
   transition: box-shadow 0.075s linear;
 }
 
-.catalog-item:hover .catalog-item__inner {
-  box-shadow: 0 6px 10px 0 fade(@black, 10%);
-}
-
-.catalog-item:active .catalog-item__inner {
-  box-shadow: 0 3px 5px 0 fade(@black, 10%);
-}
-
 .catalog-item__title {
   margin: 0;
   margin-bottom: 4px;
   padding-right: 10px;
-}
 
-.catalog-item__title a {
-  display: block;
+  a {
+    display: block;
 
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 24px;
-  color: @black;
-  text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    color: @black;
+    text-decoration: none;
 
-  outline: none;
+    outline: none;
 
-  transition: color 0.1s linear;
+    transition: color 0.1s linear;
 
-  -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 
-  &:hover,
-  &:focus {
-    color: fade(@black, 60%);
-  }
+    &:hover,
+    &:focus {
+      color: fade(@black, 60%);
+    }
 
-  &:active {
-    color: fade(@black, 30%);
+    &:active {
+      color: fade(@black, 30%);
+    }
   }
 }
 
@@ -81,21 +81,21 @@
   outline: none;
 
   -webkit-tap-highlight-color: transparent;
-}
 
-.catalog-item__btn svg {
-  transition: fill 0.1s linear;
+  svg {
+    transition: fill 0.1s linear;
 
-  fill: fade(@black, 20%);
-}
+    fill: fade(@black, 20%);
+  }
 
-.catalog-item__btn:hover svg,
-.catalog-item__btn:focus svg {
-  fill: @light-green;
-}
+  &:hover svg,
+  &:focus svg {
+    fill: @light-green;
+  }
 
-.catalog-item__btn:active svg {
-  fill: fade(@light-green, 30%);
+  &:active svg {
+    fill: fade(@light-green, 30%);
+  }
 }
 
 .catalog-item__pic-wrapper {
@@ -124,6 +124,14 @@
     &:active {
       box-shadow: 0 3px 5px 0 fade(@black, 10%);
     }
+
+    &:hover .catalog-item__inner {
+      box-shadow: none;
+    }
+
+    &:active .catalog-item__inner {
+      box-shadow: none;
+    }
   }
 
   .catalog-item__inner {
@@ -133,22 +141,14 @@
     padding: 25px 27px 0;
   }
 
-  .catalog-item:hover .catalog-item__inner {
-    box-shadow: none;
-  }
-
-  .catalog-item:active .catalog-item__inner {
-    box-shadow: none;
-  }
-
   .catalog-item__title {
     margin-bottom: 5px;
     padding-right: 40px;
-  }
 
-  .catalog-item__title a {
-    font-size: 20px;
-    line-height: 24px;
+    a {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   .catalog-item__descr {
@@ -182,6 +182,14 @@
     &:active {
       box-shadow: none;
     }
+
+    &:hover .catalog-item__inner {
+      box-shadow: 0 6px 10px 0 fade(@black, 10%);
+    }
+
+    &:active .catalog-item__inner {
+      box-shadow: 0 3px 5px 0 fade(@black, 10%);
+    }
   }
 
   .catalog-item__inner {
@@ -190,14 +198,6 @@
     width: 100%;
     min-height: 197px;
     padding: 25px 26px 0;
-  }
-
-  .catalog-item:hover .catalog-item__inner {
-    box-shadow: 0 6px 10px 0 fade(@black, 10%);
-  }
-
-  .catalog-item:active .catalog-item__inner {
-    box-shadow: 0 3px 5px 0 fade(@black, 10%);
   }
 
   .catalog-item__title {

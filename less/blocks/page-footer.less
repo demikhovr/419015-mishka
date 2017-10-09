@@ -38,21 +38,21 @@
   &:active {
     color: fade(@black, 30%);
   }
+
+  &:hover svg,
+  &:focus svg {
+    fill: #46c1ae;
+  }
+
+  &:active svg {
+    fill: fade(#46c1ae, 30%);
+  }
 }
 
 .page-footer__copyright-link svg {
   transition: fill 0.1s linear;
 
   fill: @light-green;
-}
-
-.page-footer__copyright-link:hover svg,
-.page-footer__copyright-link:focus svg {
-  fill: #46c1ae;
-}
-
-.page-footer__copyright-link:active svg {
-  fill: fade(#46c1ae, 30%);
 }
 
 @media @tablet-widths {

@@ -124,16 +124,18 @@
     opacity: 0.3;
   }
 
-  &--prev::before {
-    background-image: url("../img/icon-left-arrow.svg");
+  &--prev {
+    &::before {
+      background-image: url("../img/icon-left-arrow.svg");
+    }
   }
 
   &--next {
     border-left: 0;
-  }
 
-  &--next::before {
-    background-image: url("../img/icon-right-arrow.svg");
+    &::before {
+      background-image: url("../img/icon-right-arrow.svg");
+    }
   }
 }
 

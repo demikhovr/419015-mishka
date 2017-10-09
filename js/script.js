@@ -38,10 +38,10 @@ if(modalOverlay != null) {
   });
 };
 
-window.addEventListener("keydown", function(event) {
+window.addEventListener('keydown', function(event) {
   if (event.keyCode === 27) {
-    if (modalCart.classList.contains("modal--show")) {
-      modalCart.classList.remove("modal--show");
+    if (modalCart.classList.contains('modal--show')) {
+      modalCart.classList.remove('modal--show');
       modalOverlay.classList.remove('modal-overlay--show');
     }
   }
@@ -64,18 +64,3 @@ if(featured != null) {
     modalOverlay.classList.add('modal-overlay--show');
   });
 };
-
-/**
- * Карта
- */
-
-var map = document.querySelector(".contacts__map-pic");
-
-map.classList.add('contacts__map-pic--hidden');
-
-// var mapGoogle = document.querySelector(".contacts__google-maps");
-
-// if(mapGoogle != null) {
-//   alert("test");
-//   map.classList.add("contacts__map-pic--hidden");
-// };

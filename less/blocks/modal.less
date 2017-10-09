@@ -67,10 +67,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-}
 
-.modal__form p {
-  margin: 0;
+  p {
+    margin: 0;
+  }
 }
 
 .modal__label {
@@ -102,12 +102,14 @@
   }
 }
 
-.modal__input:focus + .modal__label {
-  border-color: @light-green;
-}
+.modal__input {
+  &:focus + .modal__label {
+    border-color: @light-green;
+  }
 
-.modal__input:checked + .modal__label {
-  border-color: @light-green;
+  &:checked + .modal__label {
+    border-color: @light-green;
+  }
 }
 
 .modal__close {

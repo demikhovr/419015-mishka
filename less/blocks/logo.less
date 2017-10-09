@@ -4,60 +4,66 @@
   outline: none;
 
   -webkit-tap-highlight-color: transparent;
-}
 
-.logo--header[href] {
-  cursor: pointer;
+  &--header[href] {
+    cursor: pointer;
 
-  transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
 
-  &:hover,
-  &:focus {
-    opacity: 0.6;
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
-  &:active {
-    opacity: 0.3;
+  &--header img {
+    display: block;
+    width: 86px;
+    height: 35px;
   }
-}
 
-.logo--footer {
-  display: none;
-}
-
-.logo--header img {
-  display: block;
-  width: 86px;
-  height: 35px;
+  &--footer {
+    display: none;
+  }
 }
 
 @media @tablet-widths {
-  .logo--footer {
-    display: block;
-  }
+  .logo {
+    &--header img {
+      width: 113px;
+      height: 46px;
+    }
 
-  .logo--header img {
-    width: 113px;
-    height: 46px;
-  }
+    &--footer {
+      display: block;
 
-  .logo--footer svg {
-    transition: fill 0.1s linear;
-  }
+      cursor: pointer;
+    }
 
-  .logo--footer:hover svg,
-  .logo--footer:focus svg {
-    fill: @green;
-  }
+    &--footer svg {
+      transition: fill 0.1s linear;
+    }
 
-  .logo--footer:active svg {
-    fill: fade(@green, 30%);
+    &--footer:hover svg,
+    &--footer:focus svg {
+      fill: @green;
+    }
+
+    &--footer:active svg {
+      fill: fade(@green, 30%);
+    }
   }
 }
 
 @media @desktop-widths {
-  .logo img {
-    width: 149px;
-    height: 72px;
+  .logo {
+    &--header img {
+      width: 149px;
+      height: 72px;
+    }
   }
 }
