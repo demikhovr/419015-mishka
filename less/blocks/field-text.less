@@ -44,6 +44,20 @@
   &--email .field-text__input {
     padding-right: 50px;
   }
+
+  &:hover .field-text__icon {
+    fill: @light-green;
+  }
+
+  &--phone .field-text__icon {
+    right: 8px;
+    bottom: 17px;
+  }
+
+  &--email .field-text__icon {
+    right: 4px;
+    bottom: 15px;
+  }
 }
 
 .field-text__label {
@@ -111,30 +125,12 @@
   }
 }
 
-.field-text svg {
+.field-text__icon {
   position: absolute;
 
   transition: fill 0.1s;
 
   fill: fade(@black, 20%);
-}
-
-.field-text:hover svg {
-  fill: @light-green;
-}
-
-.field-text__input:focus + svg {
-  fill: @light-green;
-}
-
-.field-text--phone svg {
-  right: 8px;
-  bottom: 17px;
-}
-
-.field-text--email svg {
-  right: 4px;
-  bottom: 15px;
 }
 
 @media @tablet-widths {
@@ -167,6 +163,19 @@
       &::after {
         display: none;
       }
+    }
+
+    &--phone .field-text__input,
+    &--email .field-text__input {
+      padding-right: 80px;
+    }
+
+    &--phone .field-text__icon {
+      right: 26px;
+    }
+
+    &--email .field-text__icon {
+      right: 22px;
     }
   }
 
@@ -234,6 +243,19 @@
     &--textarea .field-text__label {
       width: 20%;
       padding-left: 62px;
+    }
+
+    &--phone .field-text__input,
+    &--email .field-text__input {
+      padding-right: 50px;
+    }
+
+    &--phone .field-text__icon {
+      right: 8px;
+    }
+
+    &--email .field-text__icon {
+      right: 4px;
     }
   }
 

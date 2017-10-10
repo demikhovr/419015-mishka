@@ -38,6 +38,25 @@
   &--search .site-list__link {
     display: none;
   }
+
+  &--cart .site-list__icon {
+    position: absolute;
+    top: 50%;
+    right: 84.375%;
+
+    transform: translateY(-50%);
+  }
+
+  &:hover .site-list__icon,
+  &:focus .site-list__icon {
+    fill: @light-green;
+  }
+
+  &:active .site-list__icon {
+    transition: fill 0.1s linear;
+
+    fill: fade(@light-green, 30%);
+  }
 }
 
 .site-list__link {
@@ -151,47 +170,23 @@
   outline: none;
   cursor: pointer;
 
-  &:hover path,
-  &:focus path {
+  &:hover .site-list__form-icon,
+  &:focus .site-list__form-icon {
     fill: @light-green;
   }
 
-  &:active path {
+  &:active .site-list__form-icon {
     transition: fill 0.1s linear;
 
     fill: fade(@light-green, 30%);
   }
 }
 
-.site-list__submit path {
+.site-list__icon,
+.site-list__form-icon {
   transition: fill 0.1s linear;
 
   fill: fade(@black, 20%);
-}
-
-.site-list__item--cart svg {
-  position: absolute;
-  top: 50%;
-  right: 84.375%;
-
-  transform: translateY(-50%);
-}
-
-.site-list__item--cart path {
-  transition: fill 0.1s linear;
-
-  fill: fade(@black, 20%);
-}
-
-.site-list__item--cart:hover path,
-.site-list__item--cart:focus path {
-  fill: @light-green;
-}
-
-.site-list__item--cart:active path {
-  transition: fill 0.1s linear;
-
-  fill: fade(@light-green, 30%);
 }
 
 @media @tablet-widths {
@@ -269,6 +264,13 @@
     &--cart .site-list__link {
       padding: 31px 0 30px 0;
     }
+
+    &--cart .site-list__icon {
+      top: 50%;
+      left: 31px;
+
+      transform: translateY(-50%);
+    }
   }
 
   .site-list__link {
@@ -278,30 +280,6 @@
     font-size: 17px;
 
     border-bottom: none;
-  }
-
-  .site-list__item--cart svg {
-    top: 50%;
-    left: 31px;
-
-    transform: translateY(-50%);
-  }
-
-  .site-list__item--search path {
-    transition: fill 0.1s linear;
-
-    fill: fade(@black, 20%);
-  }
-
-  .site-list__item--search:hover path,
-  .site-list__item--search:focus path {
-    fill: @light-green;
-  }
-
-  .site-list__item--search:active path {
-    transition: fill 0.1s linear;
-
-    fill: fade(@light-green, 30%);
   }
 
   .site-list__form {
