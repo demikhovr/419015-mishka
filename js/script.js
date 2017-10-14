@@ -69,6 +69,8 @@ if(featured != null) {
  * Карта
  */
 
+var map = document.querySelector('.contacts__google-maps');
+
 if(map != null) {
   function initMap() {
     var map = new google.maps.Map(document.querySelector('.contacts__google-maps'), {
