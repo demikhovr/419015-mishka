@@ -93,7 +93,7 @@ gulp.task("webp", function() {
 
 /* Сборка спрайта */
 gulp.task("sprite", function() {
-  return gulp.src("build/img/inlineIcons/*.svg")
+  return gulp.src("build/img/inline-icons/*.svg")
     .pipe(svgstore({      /* вырезает из SVG-файлов лишнюю инф-цию */
       inLineSvg: true
     }))
