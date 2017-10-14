@@ -44,4 +44,4 @@
     "test": "npm run editorconfig \u0026\u0026 npm run stylelint"
   },
   "version": "0.1.0"
-}
+} /* В репозитории пробел присутствует, а в архиве почему-то нет */
