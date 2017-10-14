@@ -18,7 +18,7 @@ var server = require("browser-sync").create();
 var minify = require("gulp-csso");
 
 /* Минификация JS*/
-var uglify = require('gulp-uglify');
+var uglify = require("gulp-uglify");
 
 /* Отдельный плагин для переименования файла */
 var rename = require("gulp-rename");
@@ -64,11 +64,9 @@ gulp.task("style", function() {       /* описание таска */
 });
 
 /* Минифицирует скрипты */
-gulp.task('scripts', function () {
-  return gulp.src('js/*.js')
-  .pipe(gulp.dest("build/js"))
+gulp.task("scripts", function () {
+  return gulp.src("js/*.js")
   .pipe(uglify())
-  .pipe(rename("script.min.js"))
   .pipe(gulp.dest("build/js"))
   .pipe(server.stream());
 });

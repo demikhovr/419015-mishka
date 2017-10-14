@@ -9,7 +9,7 @@
       // Picture element HTML5 shiv
       document.createElement( "picture" );
     </script>
-    <script src="js/picturefill.min.js" async></script>
+    <script src="js/picturefill.js" async></script>
   </head>
   <body>
 
@@ -175,7 +175,8 @@
           <p class="contacts__address"><span>адрес: </span>г. Санкт-Петербург,<br> ул. Большая Конюшенная,<br> д. 19/8, офис 101</p>
         </div>
         <div class="contacts__map">
-          <picture>
+          <div class="contacts__google-maps">
+            <picture>
             <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
             <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
             <source type="image/webp" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
@@ -184,7 +185,7 @@
             <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
             <img class="contacts__map-pic" src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Схема проезда">
           </picture>
-          <div id="map"></div>
+          </div>
         </div>
         <a class="contacts__btn  btn" href="contacts.html">Напишите нам</a>
       </div>
@@ -251,6 +252,6 @@
     <div class="modal-overlay"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoB13VczwQLMXApGLYkuxZhS3KvZkvp7w&callback=initMap"
     async defer></script>
-    <script src="js/script.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
