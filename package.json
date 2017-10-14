@@ -1,10 +1,8 @@
 {
-  "browserslist": [
-    "last 2 versions",
-    "IE 11",
-    "Firefox ESR"
-  ],
-  "description": "Личный проект «Мишка» от HTML Academy",
+  "name": "mishka",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Личный проект «Мишка» от HTML Academy",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "7.1.x",
@@ -24,6 +22,18 @@
     "stylelint": "8.1.x",
     "stylelint-config-htmlacademy": "0.1.x"
   },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint less/**/*.less --syntax less",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
   "editorconfig-cli": [
     "*.html",
     "*.json",
@@ -34,14 +44,5 @@
   ],
   "engines": {
     "node": "8.2"
-  },
-  "private": true,
-  "scripts": {
-    "build": "gulp build",
-    "editorconfig": "editorconfig-cli",
-    "start": "npm run build \u0026\u0026 gulp serve",
-    "stylelint": "stylelint less/**/*.less --syntax less",
-    "test": "npm run editorconfig \u0026\u0026 npm run stylelint"
-  },
-  "version": "0.1.0"
-} /* В репозитории пробел присутствует, а в архиве почему-то нет */
+  }
+}
