@@ -32,12 +32,6 @@ var webp = require("gulp-webp");
 /* Сборка SVG-спрайтов */
 var svgstore = require("gulp-svgstore");
 
-/* POSTHTML */
-var posthtml = require("gulp-posthtml");
-
-/* Позволяет вставлять одни файлы в другие */
-var include = require("posthtml-include");
-
 /* Специальный плагин для последовательного запуска задач друг за другом.
 Позволяет дождаться результата одного таска, затем запускает следующий */
 var run = require("run-sequence");
@@ -101,12 +95,9 @@ gulp.task("sprite", function() {
     .pipe(gulp.dest("build/img"))
 });
 
-/* POSTHTML */
+/* HTML */
 gulp.task("html", function() {
   return gulp.src("*.html")
-    .pipe(posthtml([
-      include()
-    ]))
     .pipe(gulp.dest("build"))
     .pipe(server.stream());
 });
