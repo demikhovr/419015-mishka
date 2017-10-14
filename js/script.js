@@ -76,41 +76,41 @@ if(map != null) {
       zoom: 17,
       styles: [
         {
-          "featureType": "all",
-          "elementType": "all",
-          "stylers": [
+          'featureType': 'all',
+          'elementType': 'all',
+          'stylers': [
             {
-                "hue": "#a600ff"
+                'hue': '#a600ff'
             }
         ]
       },
       {
-        "featureType": "all",
-        "elementType": "geometry.fill",
-        "stylers": [
+        'featureType': 'all',
+        'elementType': 'geometry.fill',
+        'stylers': [
             {
-                "hue": "#00ff53"
+                'hue': '#00ff53'
             }
         ]
       },
       {
-        "featureType": "all",
-        "elementType": "labels",
-        "stylers": [
+        'featureType': 'all',
+        'elementType': 'labels',
+        'stylers': [
             {
-                "weight": "0.01"
+                'weight': '0.01'
             },
             {
-                "hue": "#0087ff"
+                'hue': '#0087ff'
             }
         ]
       },
       {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [
+        'featureType': 'administrative',
+        'elementType': 'geometry.fill',
+        'stylers': [
             {
-                "hue": "#ff7800"
+                'hue': '#ff7800'
             }
           ]
         }
