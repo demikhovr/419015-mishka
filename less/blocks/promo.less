@@ -49,7 +49,7 @@
     }
   }
 
-  &--interior svg {
+  &--interior .promo__icon {
     top: 23px;
     right: 36px;
   }
@@ -63,7 +63,7 @@
     }
   }
 
-  &--toys svg {
+  &--toys .promo__icon {
     top: 21px;
     right: 27px;
   }
@@ -92,17 +92,17 @@
     color: fade(@white, 30%);
   }
 
-  &:hover svg,
-  &:focus svg {
+  &:hover .promo__icon,
+  &:focus .promo__icon {
     fill: fade(@dark-green, 70%);
   }
 
-  &:active svg {
+  &:active .promo__icon {
     fill: fade(@dark-green, 30%);
   }
 }
 
-.promo__link svg {
+.promo__icon {
   position: absolute;
 
   transition: fill 0.1s linear;
@@ -164,11 +164,11 @@
   .promo__item {
     width: 50%;
 
-    &--interior svg {
+    &--interior .promo__icon {
       top: 30px;
     }
 
-    &--toys svg {
+    &--toys .promo__icon {
       top: 32px;
       right: 34px;
     }

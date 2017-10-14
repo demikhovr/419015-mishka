@@ -82,20 +82,20 @@
 
   -webkit-tap-highlight-color: transparent;
 
-  svg {
-    transition: fill 0.1s linear;
-
-    fill: fade(@black, 20%);
-  }
-
-  &:hover svg,
-  &:focus svg {
+  &:hover .catalog-item__icon,
+  &:focus .catalog-item__icon {
     fill: @light-green;
   }
 
-  &:active svg {
+  &:active .catalog-item__icon {
     fill: fade(@light-green, 30%);
   }
+}
+
+.catalog-item__icon {
+  transition: fill 0.1s linear;
+
+  fill: fade(@black, 20%);
 }
 
 .catalog-item__pic-wrapper {

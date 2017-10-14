@@ -44,18 +44,18 @@
       cursor: pointer;
     }
 
-    &--footer svg {
-      transition: fill 0.1s linear;
-    }
-
-    &--footer:hover svg,
-    &--footer:focus svg {
+    &--footer:hover .logo__icon,
+    &--footer:focus .logo__icon {
       fill: @green;
     }
 
-    &--footer:active svg {
+    &--footer:active .logo__icon {
       fill: fade(@green, 30%);
     }
+  }
+
+  .logo__icon {
+    transition: fill 0.1s linear;
   }
 }
 

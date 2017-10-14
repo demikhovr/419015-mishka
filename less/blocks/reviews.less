@@ -1,14 +1,18 @@
 .reviews {
-  position: relative;
-
   margin-bottom: 36px;
   padding-bottom: 50px;
+}
+
+.reviews__wrapper {
+  position: relative;
+
+  .container();
 
   &::after {
     content: "";
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
 
     height: 7px;
@@ -18,10 +22,6 @@
     background-position: center;
     background-size: 320px 7px;
   }
-}
-
-.reviews__wrapper {
-  .container();
 }
 
 .reviews__title {
@@ -154,15 +154,10 @@
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: 0 0;
+    background-size: 350px 457px;
 
     @media @retina-dppx, @retina-dpi {
       background-image: url("../img/review@2x.jpg");
-    }
-
-    &::after {
-      height: 17px;
-
-      background-size: 772px 17px;
     }
   }
 
@@ -170,6 +165,14 @@
     position: relative;
 
     padding-top: 77px;
+
+    &::after {
+      bottom: -100px;
+
+      height: 17px;
+
+      background-size: 772px 17px;
+    }
   }
 
   .reviews__title {
@@ -249,12 +252,6 @@
     padding-bottom: 85px;
 
     background-image: none;
-
-    &::after {
-      height: 23px;
-
-      background-size: 1050px 23px;
-    }
   }
 
   .reviews__wrapper {
@@ -264,6 +261,17 @@
     background-image: url("../img/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: left 50px top 0;
+    background-size: 350px 457px;
+
+    &::after {
+      right: 50px;
+      bottom: -85px;
+      left: 50px;
+
+      height: 23px;
+
+      background-size: 1050px 23px;
+    }
 
     @media @retina-dppx, @retina-dpi {
       background-image: url("../img/review@2x.jpg");
