@@ -14,6 +14,9 @@ var autoprefixer = require("autoprefixer");
 /* Модуль отображающий сайт в браузере */
 var server = require("browser-sync").create();
 
+/* Минификация HTML */
+var htmlmin = require('gulp-htmlmin');
+
 /* Минификация CSS */
 var minify = require("gulp-csso");
 
@@ -39,6 +42,14 @@ var run = require("run-sequence");
 /* Модуль для удаления del */
 var del = require("del");
 
+
+/* Минифицирует HTML */
+gulp.task('html', function() {
+  return gulp.src('*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('build'))
+    .pipe(server.stream());
+});
 
 /* Минифицирует стили */
 gulp.task("style", function() {       /* описание таска */
@@ -95,13 +106,6 @@ gulp.task("sprite", function() {
     .pipe(gulp.dest("build/img"))
 });
 
-/* HTML */
-gulp.task("html", function() {
-  return gulp.src("*.html")
-    .pipe(gulp.dest("build"))
-    .pipe(server.stream());
-});
-
 /* Перед тем как таск serve стартует должен быть запущен style */
 gulp.task("serve", function() {
   server.init({          /* инициирует сервер */
@@ -139,11 +143,11 @@ gulp.task("build", function(done) {
   run(
     "clean",
     "copy",
+    "html",
     "style",
     "scripts",
     "images",
     "sprite",
-    "html",
     "webp",
     done  /* Самым последним вызовом функции run должна быть функция, которая была передана как аргумент */
   );
