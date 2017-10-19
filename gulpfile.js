@@ -14,6 +14,9 @@ var autoprefixer = require("autoprefixer");
 /* Модуль отображающий сайт в браузере */
 var server = require("browser-sync").create();
 
+/* Минификация HTML */
+var htmlmin = require("gulp-htmlmin");
+
 /* Минификация CSS */
 var minify = require("gulp-csso");
 
@@ -32,6 +35,12 @@ var webp = require("gulp-webp");
 /* Сборка SVG-спрайтов */
 var svgstore = require("gulp-svgstore");
 
+/* POSTHTML */
+var posthtml = require("gulp-posthtml");
+
+/* Позволяет вставлять одни файлы в другие */
+var include = require("posthtml-include");
+
 /* Специальный плагин для последовательного запуска задач друг за другом.
 Позволяет дождаться результата одного таска, затем запускает следующий */
 var run = require("run-sequence");
@@ -39,6 +48,17 @@ var run = require("run-sequence");
 /* Модуль для удаления del */
 var del = require("del");
 
+
+/* Минифицирует HTML */
+gulp.task("html", function() {
+  return gulp.src("*.html")
+    .pipe(posthtml([
+      include()
+    ]))
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest("build"))
+    .pipe(server.stream());
+});
 
 /* Минифицирует стили */
 gulp.task("style", function() {       /* описание таска */
@@ -93,13 +113,6 @@ gulp.task("sprite", function() {
     }))
     .pipe(rename("sprite.svg")) /* нужно переименовать, так как мы не знаем имя спрайта */
     .pipe(gulp.dest("build/img"))
-});
-
-/* HTML */
-gulp.task("html", function() {
-  return gulp.src("*.html")
-    .pipe(gulp.dest("build"))
-    .pipe(server.stream());
 });
 
 /* Перед тем как таск serve стартует должен быть запущен style */

@@ -66,6 +66,53 @@ if(featured != null) {
 };
 
 /**
+ * Слайдер
+ */
+
+var slider = document.querySelector('.reviews');
+
+if (slider != null) {
+
+  var sliderList = slider.querySelector('.reviews__list');
+  var sliderItems = slider.querySelectorAll('.reviews__item');
+  var prevBtn = slider.querySelector('.reviews__toggle--prev');
+  var nextBtn = slider.querySelector('.reviews__toggle--next');
+
+  var slideWidth = 100;
+  var slideCount = 1;
+  var slideTotal = 3;
+  var position = 0;
+
+  prevBtn.addEventListener('click', function() {
+    position = Math.min(position + slideWidth * slideCount, 0)
+    sliderList.style.transform = 'translateX(' + position + '%)';
+
+    slideTotal++
+
+    if (slideTotal == 3) {
+      prevBtn.disabled = true;
+    } else {
+      nextBtn.disabled = false;
+      prevBtn.disabled = false;
+    }
+  });
+
+  nextBtn.addEventListener('click', function() {
+    position = Math.max(position - slideWidth * slideCount, -slideWidth * (sliderItems.length - slideCount));
+    sliderList.style.transform = 'translateX(' + position + '%)';
+
+    slideTotal--
+
+    if (slideTotal == 1) {
+      nextBtn.disabled = true;
+    } else {
+      nextBtn.disabled = false;
+      prevBtn.disabled = false;
+    }
+  });
+}
+
+/**
  * Карта
  */
 
