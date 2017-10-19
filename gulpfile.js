@@ -15,7 +15,7 @@ var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 
 /* Минификация HTML */
-var htmlmin = require('gulp-htmlmin');
+var htmlmin = require("gulp-htmlmin");
 
 /* Минификация CSS */
 var minify = require("gulp-csso");
@@ -35,6 +35,12 @@ var webp = require("gulp-webp");
 /* Сборка SVG-спрайтов */
 var svgstore = require("gulp-svgstore");
 
+/* POSTHTML */
+var posthtml = require("gulp-posthtml");
+
+/* Позволяет вставлять одни файлы в другие */
+var include = require("posthtml-include");
+
 /* Специальный плагин для последовательного запуска задач друг за другом.
 Позволяет дождаться результата одного таска, затем запускает следующий */
 var run = require("run-sequence");
@@ -44,10 +50,13 @@ var del = require("del");
 
 
 /* Минифицирует HTML */
-gulp.task('html', function() {
-  return gulp.src('*.html')
+gulp.task("html", function() {
+  return gulp.src("*.html")
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest("build"))
     .pipe(server.stream());
 });
 
@@ -143,11 +152,11 @@ gulp.task("build", function(done) {
   run(
     "clean",
     "copy",
-    "html",
     "style",
     "scripts",
     "images",
     "sprite",
+    "html",
     "webp",
     done  /* Самым последним вызовом функции run должна быть функция, которая была передана как аргумент */
   );
