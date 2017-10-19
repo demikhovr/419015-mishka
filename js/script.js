@@ -70,17 +70,18 @@ if(featured != null) {
  */
 
 var slider = document.querySelector('.reviews');
-var sliderList = slider.querySelector('.reviews__list');
-var sliderItems = slider.querySelectorAll('.reviews__item');
-var prevBtn = slider.querySelector('.reviews__toggle--prev');
-var nextBtn = slider.querySelector('.reviews__toggle--next');
-
-var slideWidth = 100;
-var slideCount = 1;
-var slideTotal = 3;
-var position = 0;
 
 if (slider != null) {
+
+  var sliderList = slider.querySelector('.reviews__list');
+  var sliderItems = slider.querySelectorAll('.reviews__item');
+  var prevBtn = slider.querySelector('.reviews__toggle--prev');
+  var nextBtn = slider.querySelector('.reviews__toggle--next');
+
+  var slideWidth = 100;
+  var slideCount = 1;
+  var slideTotal = 3;
+  var position = 0;
 
   prevBtn.addEventListener('click', function() {
     position = Math.min(position + slideWidth * slideCount, 0)
